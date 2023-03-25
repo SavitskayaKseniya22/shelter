@@ -14,7 +14,8 @@ ul,
 p,
 h1,
 h2,
-h3 {
+h3,
+h4 {
   margin: 0;
   padding: 0;
 }
@@ -149,19 +150,17 @@ header .container {
 }
 
 .about .container {
-  padding: 80px 40px;
+  padding: 94px 215px 114px 635px;
   background-image: url("/shelter/assets/images/about-pets.png");
   background-repeat: no-repeat;
-  background-position: left 220px bottom 80px;
+  background-position: left 220px bottom 100px;
   display: flex;
   justify-content: right;
 }
 .about .about-content {
-  width: 50%;
   display: flex;
   flex-direction: column;
   gap: 25px;
-  padding: 14px 175px 14px 0;
 }
 
 .friends {
@@ -237,4 +236,53 @@ header .container {
   flex-direction: column;
   align-items: center;
   gap: 30px;
+}
+
+.addition {
+  background-color: #f6f6f6;
+}
+.addition .container {
+  padding: 80px 182px 100px 718px;
+  background-image: url("/shelter/assets/images/donation-dog.png");
+  background-repeat: no-repeat;
+  background-position: left 183px bottom 110px;
+}
+
+.addition-content {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  justify-content: space-between;
+  align-items: left;
+}
+.addition-content p {
+  font-family: "Arial";
+  font-style: italic;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 18px;
+  color: #b2b2b2;
+}
+.addition-content a.like-button {
+  padding: 10px 15px 10px 60px;
+  font-family: "Georgia";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 115%;
+  letter-spacing: 0.06em;
+  border-radius: 9px;
+  width: 350px;
+  background-image: url("/shelter/assets/icons/credit-card.svg");
+  background-repeat: no-repeat;
+  background-position: left 15px bottom 10px;
+}
+
+h4 {
+  font-family: "Georgia";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 15px;
+  line-height: 110%;
+  letter-spacing: 0.06em;
 }/*# sourceMappingURL=style.css.map */
