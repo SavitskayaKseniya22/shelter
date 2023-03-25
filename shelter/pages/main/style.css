@@ -211,4 +211,30 @@ header .container {
   height: 52px;
   border: 2px solid #f1cdb3;
   border-radius: 50px;
+}
+
+.help .container {
+  padding: 80px 40px 100px 40px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 60px;
+}
+.help h2 {
+  text-align: center;
+}
+
+.help-list {
+  display: flex;
+  -moz-column-gap: 120px;
+       column-gap: 120px;
+  row-gap: 55px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.help-list li {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 30px;
 }/*# sourceMappingURL=style.css.map */
