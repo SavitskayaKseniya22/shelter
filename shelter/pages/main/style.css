@@ -197,6 +197,14 @@ header .container {
   align-items: center;
   background: #fafafa;
   padding-bottom: 30px;
+  cursor: pointer;
+}
+.friends-card:hover {
+  background: white;
+}
+.friends-card:hover .like-button_white {
+  background: #fddcc4;
+  border: 2px solid #fddcc4;
 }
 
 .friends-arrow {
