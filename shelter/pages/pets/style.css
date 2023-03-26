@@ -1,5 +1,8 @@
 .header a {
-  color: black;
+  color: #545454;
+}
+.header p {
+  color: #292929;
 }
 
 main {
