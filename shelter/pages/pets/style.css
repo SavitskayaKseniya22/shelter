@@ -1,3 +1,45 @@
 .header a {
   color: black;
+}
+
+main {
+  background: #f6f6f6;
+}
+main .container {
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  gap: 45px;
+  text-align: center;
+  padding: 80px 40px 100px 40px;
+}
+main h1 {
+  font-size: 35px;
+  line-height: 130%;
+  letter-spacing: 0.06em;
+}
+
+.friends-list {
+  display: flex;
+  flex-wrap: wrap;
+  row-gap: 30px;
+  -moz-column-gap: 40px;
+       column-gap: 40px;
+  padding: 15px 0;
+}
+
+.friends-carousel {
+  gap: 20px;
+}
+.friends-carousel .like-button {
+  padding: 0;
+  border: none;
+}
+.friends-carousel .friends-pag-button:disabled {
+  cursor: auto;
+  border: 2px solid #cdcdcd;
+}
+.friends-carousel .friends-pag-button:disabled:hover {
+  cursor: auto;
+  background-color: transparent;
 }/*# sourceMappingURL=style.css.map */
