@@ -5,9 +5,9 @@
 
 body {
   font-family: Arial, Helvetica, sans-serif;
+  font-weight: 400;
   font-size: 15px;
   line-height: 160%;
-  font-weight: 400;
 }
 
 ul,
@@ -25,22 +25,36 @@ button {
   cursor: pointer;
 }
 
-h2 {
-  font-family: "Georgia";
+h1,
+h2,
+h3,
+h4,
+a,
+button {
+  font-family: Georgia, "Times New Roman", Times, serif;
   font-style: normal;
   font-weight: 400;
-  font-size: 35px;
-  line-height: 130%;
   letter-spacing: 0.06em;
 }
 
+h1 {
+  font-size: 44px;
+  line-height: 130%;
+  letter-spacing: 0;
+}
+
+h2 {
+  font-size: 35px;
+  line-height: 130%;
+}
+
 h3 {
-  font-family: "Georgia";
-  font-style: normal;
-  font-weight: 400;
   font-size: 20px;
-  line-height: 23px;
-  letter-spacing: 0.06em;
+  line-height: 115%;
+}
+
+h4 {
+  line-height: 110%;
 }
 
 li {
@@ -51,58 +65,47 @@ a {
   text-decoration: none;
   color: white;
 }
-a:hover {
-  border-bottom: 3px solid #f1cdb3;
-}
 
 .like-button {
   display: block;
   padding: 15px 45px;
   border-radius: 100px;
-  background-color: #f1cdb3;
+  background: #f1cdb3;
   color: black;
-  transition: 0.5s;
-  font-family: "Georgia";
-  font-style: normal;
+  transition: background 0.5s;
   font-size: 17px;
   line-height: 130%;
-  letter-spacing: 0.06em;
 }
 .like-button:hover {
-  background-color: #fddcc4;
+  background: #fddcc4;
 }
 
 .like-button_white {
-  background-color: white;
+  background: transparent;
   border: 2px solid #f1cdb3;
+  transition: background 0.5s, border 0.5s;
 }
-
-h1 {
-  font-family: "Georgia";
-  font-style: normal;
-  font-size: 44px;
-  line-height: 130%;
+.like-button_white:hover {
+  background: #fddcc4;
+  border: 2px solid #fddcc4;
 }
 
 .container {
+  display: flex;
   width: 1280px;
   margin: 0 auto;
 }
 
 header {
   color: white;
-  background-image: url("/shelter/assets/images/start-screen-gradient-background.png");
-  background-repeat: no-repeat;
+  background: url("/shelter/assets/images/start-screen-gradient-background.png") no-repeat top left;
   background-size: cover;
 }
 header .container {
   height: 908px;
   padding: 30px 40px;
-  display: flex;
   flex-direction: column;
-  background-image: url("/shelter/assets/images/start-screen-puppy.png");
-  background-repeat: no-repeat;
-  background-position: right 40px bottom;
+  background: url("/shelter/assets/images/start-screen-puppy.png") right 40px bottom no-repeat;
 }
 
 .header-nav {
@@ -111,14 +114,14 @@ header .container {
   justify-content: space-between;
   align-items: center;
 }
-.header-nav p {
-  font-size: 13px;
-  line-height: 14.95px;
-}
 
 .header-nav__links {
   display: flex;
   gap: 35px;
+}
+.header-nav__links a {
+  font-family: Arial, Helvetica, sans-serif;
+  letter-spacing: 0;
 }
 
 .header-nav__logo {
@@ -129,13 +132,13 @@ header .container {
 }
 .header-nav__logo a {
   display: block;
-  font-family: Georgia, "Times New Roman", Times, serif;
-  letter-spacing: 0.06em;
   font-size: 32px;
-  line-height: 35.2px;
+  line-height: 110%;
   color: #f1cdb3;
 }
 .header-nav__logo p {
+  font-size: 13px;
+  line-height: 115%;
   letter-spacing: 0.1em;
 }
 
@@ -151,10 +154,7 @@ header .container {
 
 .about .container {
   padding: 94px 215px 114px 635px;
-  background-image: url("/shelter/assets/images/about-pets.png");
-  background-repeat: no-repeat;
-  background-position: left 220px bottom 100px;
-  display: flex;
+  background: url("/shelter/assets/images/about-pets.png") left 220px bottom 100px no-repeat;
   justify-content: right;
 }
 .about .about-content {
@@ -164,11 +164,10 @@ header .container {
 }
 
 .friends {
-  background-color: #f6f6f6;
+  background: #f6f6f6;
 }
 .friends .container {
   padding: 80px 40px 100px 40px;
-  display: flex;
   flex-direction: column;
   gap: 60px;
   align-items: center;
@@ -196,25 +195,21 @@ header .container {
   gap: 30px;
   justify-content: space-between;
   align-items: center;
-  background-color: #fafafa;
-  border: 1px solid red;
+  background: #fafafa;
   padding-bottom: 30px;
-}
-.friends-card img {
-  width: 270px;
-  height: 270px;
 }
 
 .friends-arrow {
   width: 52px;
   height: 52px;
-  border: 2px solid #f1cdb3;
   border-radius: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .help .container {
   padding: 80px 40px 100px 40px;
-  display: flex;
   flex-direction: column;
   align-items: center;
   gap: 60px;
@@ -239,13 +234,11 @@ header .container {
 }
 
 .addition {
-  background-color: #f6f6f6;
+  background: #f6f6f6;
 }
 .addition .container {
   padding: 80px 182px 100px 718px;
-  background-image: url("/shelter/assets/images/donation-dog.png");
-  background-repeat: no-repeat;
-  background-position: left 183px bottom 110px;
+  background: url("/shelter/assets/images/donation-dog.png") left 183px bottom 110px no-repeat;
 }
 
 .addition-content {
@@ -255,65 +248,42 @@ header .container {
   justify-content: space-between;
   align-items: left;
 }
-.addition-content p {
-  font-family: "Arial";
-  font-style: italic;
-  font-weight: 400;
+.addition-content i {
   font-size: 12px;
-  line-height: 18px;
+  line-height: 150%;
   color: #b2b2b2;
 }
-.addition-content a.like-button {
+.addition-content .like-button {
   padding: 10px 15px 10px 60px;
-  font-family: "Georgia";
-  font-style: normal;
-  font-weight: 400;
   font-size: 20px;
   line-height: 115%;
-  letter-spacing: 0.06em;
   border-radius: 9px;
   width: 350px;
-  background-image: url("/shelter/assets/icons/credit-card.svg");
-  background-repeat: no-repeat;
-  background-position: left 15px bottom 10px;
+  background: #f1cdb3 url("/shelter/assets/icons/credit-card.svg") left 15px bottom 10px no-repeat;
 }
-
-h4 {
-  font-family: "Georgia";
-  font-style: normal;
-  font-weight: 400;
-  font-size: 15px;
-  line-height: 110%;
-  letter-spacing: 0.06em;
+.addition-content .like-button:hover {
+  background: #fddcc4 url("/shelter/assets/icons/credit-card.svg") left 15px bottom 10px no-repeat;
 }
 
 .footer {
-  background-image: url("/shelter/assets/images/start-screen-gradient-background.png");
-  background-repeat: no-repeat;
+  background: url("/shelter/assets/images/start-screen-gradient-background.png") no-repeat;
   background-size: cover;
 }
 .footer .footer-email {
-  background-image: url("/shelter/assets/icons/icon-email.svg");
-  background-repeat: no-repeat;
-  background-position: center left;
+  background: url("/shelter/assets/icons/icon-email.svg") center left no-repeat;
 }
 .footer .footer-tel {
-  background-image: url("/shelter/assets/icons/icon-phone.svg");
-  background-repeat: no-repeat;
+  background: url("/shelter/assets/icons/icon-phone.svg") center left no-repeat;
 }
 .footer .footer-mail {
-  background-image: url("/shelter/assets/icons/icon-marker.png");
-  background-repeat: no-repeat;
+  background: url("/shelter/assets/icons/icon-marker.png") center left no-repeat;
 }
 .footer h2 {
   color: white;
 }
 .footer .container {
   padding: 56px 40px;
-  background-image: url("/shelter/assets/images/footer-puppy.png");
-  background-repeat: no-repeat;
-  background-position: top 40px right 40px;
-  display: flex;
+  background: url("/shelter/assets/images/footer-puppy.png") top 40px right 40px no-repeat;
   gap: 160px;
 }
 .footer section {
@@ -321,22 +291,15 @@ h4 {
   flex-direction: column;
   gap: 40px;
 }
-.footer section p,
 .footer section a {
-  display: block;
   min-height: 32px;
   padding-left: 60px;
-  font-family: "Georgia";
-  font-style: normal;
-  font-weight: 400;
   font-size: 20px;
-  line-height: 115%;
   color: #f1cdb3;
-  letter-spacing: 0.06em;
-}
-.footer section p {
-  padding-left: 42px;
 }
 .footer .address {
   gap: 32px;
+}
+.footer .address a {
+  padding-left: 42px;
 }/*# sourceMappingURL=style.css.map */

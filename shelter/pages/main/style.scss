@@ -1,14 +1,24 @@
 @import url('https://fonts.cdnfonts.com/css/georgia');
 
+$emphasis-font-family: Georgia, 'Times New Roman', Times, serif;
+$main-font-family: Arial, Helvetica, sans-serif;
+$main-font-style: normal;
+$main-font-weight: 400;
+$emphasis-letter-spacing: 0.06em;
+
+$emphasis-color: #f1cdb3;
+$emphasis-hover-color: #fddcc4;
+$background-color: #f6f6f6;
+
 * {
   box-sizing: border-box;
 }
 
 body {
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: $main-font-family;
+  font-weight: $main-font-weight;
   font-size: 15px;
   line-height: 160%;
-  font-weight: 400;
 }
 
 ul,
@@ -26,22 +36,36 @@ button {
   cursor: pointer;
 }
 
+h1,
+h2,
+h3,
+h4,
+a,
+button {
+  font-family: $emphasis-font-family;
+  font-style: $main-font-style;
+  font-weight: $main-font-weight;
+  letter-spacing: $emphasis-letter-spacing;
+}
+
+h1 {
+  font-size: 44px;
+  line-height: 130%;
+  letter-spacing: 0;
+}
+
 h2 {
-  font-family: 'Georgia';
-  font-style: normal;
-  font-weight: 400;
   font-size: 35px;
   line-height: 130%;
-  letter-spacing: 0.06em;
 }
 
 h3 {
-  font-family: 'Georgia';
-  font-style: normal;
-  font-weight: 400;
   font-size: 20px;
-  line-height: 23px;
-  letter-spacing: 0.06em;
+  line-height: 115%;
+}
+
+h4 {
+  line-height: 110%;
 }
 
 li {
@@ -51,59 +75,50 @@ li {
 a {
   text-decoration: none;
   color: white;
-  &:hover {
-    border-bottom: 3px solid #f1cdb3;
-  }
 }
 
 .like-button {
   display: block;
   padding: 15px 45px;
   border-radius: 100px;
-  background-color: #f1cdb3;
+  background: $emphasis-color;
   color: black;
-  transition: 0.5s;
-  font-family: 'Georgia';
-  font-style: normal;
+  transition: background 0.5s;
   font-size: 17px;
   line-height: 130%;
-  letter-spacing: 0.06em;
 
   &:hover {
-    background-color: #fddcc4;
+    background: $emphasis-hover-color;
   }
 }
 
 .like-button_white {
-  background-color: white;
-  border: 2px solid #f1cdb3;
-}
+  background: transparent;
+  border: 2px solid $emphasis-color;
+  transition: background 0.5s, border 0.5s;
 
-h1 {
-  font-family: 'Georgia';
-  font-style: normal;
-  font-size: 44px;
-  line-height: 130%;
+  &:hover {
+    background: $emphasis-hover-color;
+    border: 2px solid $emphasis-hover-color;
+  }
 }
 
 .container {
+  display: flex;
   width: 1280px;
   margin: 0 auto;
 }
 
 header {
   color: white;
-  background-image: url('/shelter/assets/images/start-screen-gradient-background.png');
-  background-repeat: no-repeat;
+  background: url('/shelter/assets/images/start-screen-gradient-background.png') no-repeat top left;
   background-size: cover;
+
   .container {
     height: 908px;
     padding: 30px 40px;
-    display: flex;
     flex-direction: column;
-    background-image: url('/shelter/assets/images/start-screen-puppy.png');
-    background-repeat: no-repeat;
-    background-position: right 40px bottom;
+    background: url('/shelter/assets/images/start-screen-puppy.png') right 40px bottom no-repeat;
   }
 }
 
@@ -112,16 +127,16 @@ header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-
-  p {
-    font-size: 13px;
-    line-height: 14.95px;
-  }
 }
 
 .header-nav__links {
   display: flex;
   gap: 35px;
+
+  a {
+    font-family: $main-font-family;
+    letter-spacing: 0;
+  }
 }
 
 .header-nav__logo {
@@ -132,13 +147,13 @@ header {
 
   a {
     display: block;
-    font-family: Georgia, 'Times New Roman', Times, serif;
-    letter-spacing: 0.06em;
     font-size: 32px;
-    line-height: 35.2px;
-    color: #f1cdb3;
+    line-height: 110%;
+    color: $emphasis-color;
   }
   p {
+    font-size: 13px;
+    line-height: 115%;
     letter-spacing: 0.1em;
   }
 }
@@ -156,11 +171,7 @@ header {
 .about {
   .container {
     padding: 94px 215px 114px 635px;
-
-    background-image: url('/shelter/assets/images/about-pets.png');
-    background-repeat: no-repeat;
-    background-position: left 220px bottom 100px;
-    display: flex;
+    background: url('/shelter/assets/images/about-pets.png') left 220px bottom 100px no-repeat;
     justify-content: right;
   }
   .about-content {
@@ -171,10 +182,10 @@ header {
 }
 
 .friends {
-  background-color: #f6f6f6;
+  background: $background-color;
+
   .container {
     padding: 80px 40px 100px 40px;
-    display: flex;
     flex-direction: column;
     gap: 60px;
     align-items: center;
@@ -202,26 +213,22 @@ header {
   gap: 30px;
   justify-content: space-between;
   align-items: center;
-  background-color: #fafafa;
-  border: 1px solid red;
+  background: #fafafa;
   padding-bottom: 30px;
-  img {
-    width: 270px;
-    height: 270px;
-  }
 }
 
 .friends-arrow {
   width: 52px;
   height: 52px;
-  border: 2px solid #f1cdb3;
   border-radius: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .help {
   .container {
     padding: 80px 40px 100px 40px;
-    display: flex;
     flex-direction: column;
     align-items: center;
     gap: 60px;
@@ -245,12 +252,11 @@ header {
   }
 }
 .addition {
-  background-color: #f6f6f6;
+  background: $background-color;
+
   .container {
     padding: 80px 182px 100px 718px;
-    background-image: url('/shelter/assets/images/donation-dog.png');
-    background-repeat: no-repeat;
-    background-position: left 183px bottom 110px;
+    background: url('/shelter/assets/images/donation-dog.png') left 183px bottom 110px no-repeat;
   }
 }
 
@@ -260,91 +266,67 @@ header {
   gap: 20px;
   justify-content: space-between;
   align-items: left;
-  p {
-    font-family: 'Arial';
-    font-style: italic;
-    font-weight: 400;
+
+  i {
     font-size: 12px;
-    line-height: 18px;
+    line-height: 150%;
     color: #b2b2b2;
   }
-  a.like-button {
+
+  .like-button {
     padding: 10px 15px 10px 60px;
-    font-family: 'Georgia';
-    font-style: normal;
-    font-weight: 400;
     font-size: 20px;
     line-height: 115%;
-
-    letter-spacing: 0.06em;
     border-radius: 9px;
     width: 350px;
-    background-image: url('/shelter/assets/icons/credit-card.svg');
-    background-repeat: no-repeat;
-    background-position: left 15px bottom 10px;
-  }
-}
+    background: $emphasis-color url('/shelter/assets/icons/credit-card.svg') left 15px bottom 10px no-repeat;
 
-h4 {
-  font-family: 'Georgia';
-  font-style: normal;
-  font-weight: 400;
-  font-size: 15px;
-  line-height: 110%;
-  letter-spacing: 0.06em;
+    &:hover {
+      background: $emphasis-hover-color url('/shelter/assets/icons/credit-card.svg') left 15px bottom 10px no-repeat;
+    }
+  }
 }
 
 .footer {
-  background-image: url('/shelter/assets/images/start-screen-gradient-background.png');
-  background-repeat: no-repeat;
+  background: url('/shelter/assets/images/start-screen-gradient-background.png') no-repeat;
   background-size: cover;
 
   .footer-email {
-    background-image: url('/shelter/assets/icons/icon-email.svg');
-    background-repeat: no-repeat;
-    background-position: center left;
+    background: url('/shelter/assets/icons/icon-email.svg') center left no-repeat;
   }
   .footer-tel {
-    background-image: url('/shelter/assets/icons/icon-phone.svg');
-    background-repeat: no-repeat;
+    background: url('/shelter/assets/icons/icon-phone.svg') center left no-repeat;
   }
   .footer-mail {
-    background-image: url('/shelter/assets/icons/icon-marker.png');
-    background-repeat: no-repeat;
+    background: url('/shelter/assets/icons/icon-marker.png') center left no-repeat;
   }
+
   h2 {
     color: white;
   }
+
   .container {
     padding: 56px 40px;
-    background-image: url('/shelter/assets/images/footer-puppy.png');
-    background-repeat: no-repeat;
-    background-position: top 40px right 40px;
-    display: flex;
+    background: url('/shelter/assets/images/footer-puppy.png') top 40px right 40px no-repeat;
     gap: 160px;
   }
+
   section {
     display: flex;
     flex-direction: column;
     gap: 40px;
-    p,
+
     a {
-      display: block;
       min-height: 32px;
       padding-left: 60px;
-      font-family: 'Georgia';
-      font-style: normal;
-      font-weight: 400;
       font-size: 20px;
-      line-height: 115%;
-      color: #f1cdb3;
-      letter-spacing: 0.06em;
-    }
-    p {
-      padding-left: 42px;
+      color: $emphasis-color;
     }
   }
   .address {
     gap: 32px;
+    a {
+      padding-left: 42px;
+    }
   }
 }
