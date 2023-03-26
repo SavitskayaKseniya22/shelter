@@ -14,6 +14,10 @@ $background-color: #f6f6f6;
   box-sizing: border-box;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   font-family: $main-font-family;
   font-weight: $main-font-weight;
@@ -109,24 +113,23 @@ a {
   margin: 0 auto;
 }
 
-header {
+.first-screen {
   color: white;
   background: url('/shelter/assets/images/start-screen-gradient-background.png') no-repeat top left;
   background-size: cover;
-
-  .container {
-    height: 908px;
-    padding: 30px 40px;
-    flex-direction: column;
-    background: url('/shelter/assets/images/start-screen-puppy.png') right 40px bottom no-repeat;
-  }
+  height: 908px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
 }
 
-.header-nav {
-  width: 100%;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+.header {
+  .container {
+    padding: 30px 40px;
+    justify-content: space-between;
+    align-items: center;
+  }
 }
 
 .header-nav__links {
@@ -158,14 +161,21 @@ header {
   }
 }
 
-.header-content {
-  width: 460px;
-  display: flex;
-  gap: 42px;
-  flex-direction: column;
-  justify-content: space-between;
-  margin-top: 253px;
-  align-items: flex-start;
+.first-screen-content {
+  width: 100%;
+  flex-grow: 1;
+
+  .container {
+    height: 100%;
+    gap: 42px;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 223px 740px 243px 40px;
+    align-items: flex-start;
+    flex-direction: column;
+    background: url('/shelter/assets/images/start-screen-puppy.png') right 40px bottom no-repeat;
+    flex-grow: 1;
+  }
 }
 
 .about {

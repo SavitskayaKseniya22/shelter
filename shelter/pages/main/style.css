@@ -3,6 +3,10 @@
   box-sizing: border-box;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   font-family: Arial, Helvetica, sans-serif;
   font-weight: 400;
@@ -96,21 +100,19 @@ a {
   margin: 0 auto;
 }
 
-header {
+.first-screen {
   color: white;
   background: url("/shelter/assets/images/start-screen-gradient-background.png") no-repeat top left;
   background-size: cover;
-}
-header .container {
   height: 908px;
-  padding: 30px 40px;
+  display: flex;
   flex-direction: column;
-  background: url("/shelter/assets/images/start-screen-puppy.png") right 40px bottom no-repeat;
+  align-items: center;
+  justify-content: space-between;
 }
 
-.header-nav {
-  width: 100%;
-  display: flex;
+.header .container {
+  padding: 30px 40px;
   justify-content: space-between;
   align-items: center;
 }
@@ -142,14 +144,20 @@ header .container {
   letter-spacing: 0.1em;
 }
 
-.header-content {
-  width: 460px;
-  display: flex;
+.first-screen-content {
+  width: 100%;
+  flex-grow: 1;
+}
+.first-screen-content .container {
+  height: 100%;
   gap: 42px;
   flex-direction: column;
   justify-content: space-between;
-  margin-top: 253px;
+  padding: 223px 740px 243px 40px;
   align-items: flex-start;
+  flex-direction: column;
+  background: url("/shelter/assets/images/start-screen-puppy.png") right 40px bottom no-repeat;
+  flex-grow: 1;
 }
 
 .about .container {
