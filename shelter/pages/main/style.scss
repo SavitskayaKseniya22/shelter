@@ -119,7 +119,7 @@ a {
 }
 
 .first-screen {
-  background: url('/shelter/assets/images/start-screen-gradient-background.png') no-repeat top left;
+  background: url('../../assets/images/start-screen-gradient-background.png') no-repeat top left;
   background-size: cover;
   height: 908px;
   display: flex;
@@ -188,7 +188,7 @@ a {
     padding: 223px 775px 243px 40px;
     align-items: flex-start;
     flex-direction: column;
-    background: url('/shelter/assets/images/start-screen-puppy.png') right 40px bottom no-repeat;
+    background: url('../../assets/images/start-screen-puppy.png') right 40px bottom no-repeat;
 
     flex-grow: 1;
     color: #cdcdcd;
@@ -198,7 +198,7 @@ a {
 .about {
   .container {
     padding: 94px 215px 114px 635px;
-    background: url('/shelter/assets/images/about-pets.png') left 220px bottom 100px no-repeat;
+    background: url('../../assets/images/about-pets.png') left 220px bottom 100px no-repeat;
     justify-content: right;
   }
   .about-content {
@@ -241,7 +241,12 @@ a {
   align-items: center;
   background: #fafafa;
   padding-bottom: 30px;
+  border-radius: 9px;
   cursor: pointer;
+  img {
+    border-top-left-radius: 9px;
+    border-top-right-radius: 9px;
+  }
   &:hover {
     background: white;
     .like-button_white {
@@ -290,7 +295,7 @@ a {
 
   .container {
     padding: 80px 182px 100px 718px;
-    background: url('/shelter/assets/images/donation-dog.png') left 183px bottom 110px no-repeat;
+    background: url('../../assets/images/donation-dog.png') left 183px bottom 110px no-repeat;
   }
 }
 
@@ -313,26 +318,26 @@ a {
     line-height: 115%;
     border-radius: 9px;
     width: 350px;
-    background: $emphasis-color url('/shelter/assets/icons/credit-card.svg') left 15px bottom 10px no-repeat;
+    background: $emphasis-color url('../../assets/icons/credit-card.svg') left 15px bottom 10px no-repeat;
 
     &:hover {
-      background: $emphasis-hover-color url('/shelter/assets/icons/credit-card.svg') left 15px bottom 10px no-repeat;
+      background: $emphasis-hover-color url('../../assets/icons/credit-card.svg') left 15px bottom 10px no-repeat;
     }
   }
 }
 
 .footer {
-  background: url('/shelter/assets/images/start-screen-gradient-background.png') no-repeat;
+  background: url('../../assets/images/start-screen-gradient-background.png') no-repeat;
   background-size: cover;
 
   .footer-email {
-    background: url('/shelter/assets/icons/icon-email.svg') center left no-repeat;
+    background: url('../../assets/icons/icon-email.svg') center left no-repeat;
   }
   .footer-tel {
-    background: url('/shelter/assets/icons/icon-phone.svg') center left no-repeat;
+    background: url('../../assets/icons/icon-phone.svg') center left no-repeat;
   }
   .footer-mail {
-    background: url('/shelter/assets/icons/icon-marker.png') center left no-repeat;
+    background: url('../../assets/icons/icon-marker.png') center left no-repeat;
   }
 
   h2 {
@@ -341,7 +346,7 @@ a {
 
   .container {
     padding: 56px 40px;
-    background: url('/shelter/assets/images/footer-puppy.png') top 40px right 40px no-repeat;
+    background: url('../../assets/images/footer-puppy.png') top 40px right 40px no-repeat;
     gap: 160px;
   }
 
