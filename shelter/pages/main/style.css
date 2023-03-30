@@ -55,10 +55,21 @@ h1 {
   line-height: 130%;
   letter-spacing: 0;
 }
+@media (max-width: 767px) {
+  h1 {
+    font-size: 25px;
+    line-height: 130%;
+  }
+}
 
 h2 {
   font-size: 35px;
   line-height: 130%;
+}
+@media (max-width: 767px) {
+  h2 {
+    font-size: 25px;
+  }
 }
 
 h3 {
@@ -120,7 +131,6 @@ a {
 .first-screen {
   background: url("../../assets/images/start-screen-gradient-background.png") no-repeat top left;
   background-size: cover;
-  height: 908px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -236,6 +246,32 @@ a {
   background: url("../../assets/images/start-screen-puppy.png") right 40px bottom no-repeat;
   flex-grow: 1;
   color: #cdcdcd;
+}
+@media (max-width: 1279px) {
+  .first-screen-content .container {
+    padding: 30px 155px 693px 155px;
+    background: url("../../assets/images/start-screen-puppy.png") right 30px bottom no-repeat;
+    background-size: 75%;
+  }
+}
+@media (max-width: 767px) {
+  .first-screen-content .container {
+    padding: 30px 10px 377px 10px;
+    align-items: center;
+    text-align: center;
+    background: url("../../assets/images/start-screen-puppy.png") right 10px bottom no-repeat;
+    background-size: 80%;
+  }
+}
+@media (max-width: 767px) {
+  .first-screen-content .container h1 {
+    letter-spacing: 0.06em;
+  }
+}
+@media (max-width: 1279px) {
+  .first-screen-content .container .like-button {
+    align-self: center;
+  }
 }
 
 .about .container {
