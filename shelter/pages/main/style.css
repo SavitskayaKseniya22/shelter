@@ -59,6 +59,7 @@ h1 {
   h1 {
     font-size: 25px;
     line-height: 130%;
+    letter-spacing: 0.06em;
   }
 }
 
@@ -69,6 +70,8 @@ h2 {
 @media (max-width: 767px) {
   h2 {
     font-size: 25px;
+    align-self: center;
+    text-align: center;
   }
 }
 
@@ -279,10 +282,28 @@ a {
   background: url("../../assets/images/about-pets.png") left 220px bottom 100px no-repeat;
   justify-content: right;
 }
+@media (max-width: 1279px) {
+  .about .container {
+    padding: 80px 169px 588px 169px;
+    background: url("../../assets/images/about-pets.png") left 234px bottom 100px no-repeat;
+  }
+}
+@media (max-width: 767px) {
+  .about .container {
+    padding: 42px 25px 438px 25px;
+    background: url("../../assets/images/about-pets.png") left 28px bottom 42.4px no-repeat;
+    background-size: 80%;
+  }
+}
 .about .about-content {
   display: flex;
   flex-direction: column;
   gap: 25px;
+}
+@media (max-width: 767px) {
+  .about .about-content {
+    gap: 22px;
+  }
 }
 
 .friends {
