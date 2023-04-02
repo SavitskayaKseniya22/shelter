@@ -499,24 +499,49 @@ a {
     padding: 56px 40px;
     background: url('../../assets/images/footer-puppy.png') top 40px right 40px no-repeat;
     gap: 160px;
+    @media (max-width: 1279px) {
+      padding: 30px 30px 375px 30px;
+      background: url('../../assets/images/footer-puppy.png') bottom right 234px no-repeat;
+      gap: 60px;
+      justify-content: center;
+    }
+
+    @media (max-width: 767px) {
+      flex-direction: column;
+      align-items: center;
+      padding: 30px 10px 309px 10px;
+      background: url('../../assets/images/footer-puppy.png') bottom right 30px no-repeat;
+      background-size: 80%;
+      gap: 40px;
+      justify-content: center;
+    }
   }
 
   section {
     display: flex;
     flex-direction: column;
     gap: 40px;
+    align-items: center;
 
     a {
       min-height: 32px;
       padding-left: 60px;
       font-size: 20px;
       color: $emphasis-color;
+      line-height: 32px;
     }
   }
+
   .address {
     gap: 32px;
+    align-items: normal;
     a {
       padding-left: 42px;
+      line-height: 115%;
+    }
+
+    @media (max-width: 767px) {
+      gap: 40px;
     }
   }
 }

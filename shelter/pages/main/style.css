@@ -491,20 +491,48 @@ a {
   background: url("../../assets/images/footer-puppy.png") top 40px right 40px no-repeat;
   gap: 160px;
 }
+@media (max-width: 1279px) {
+  .footer .container {
+    padding: 30px 30px 375px 30px;
+    background: url("../../assets/images/footer-puppy.png") bottom right 234px no-repeat;
+    gap: 60px;
+    justify-content: center;
+  }
+}
+@media (max-width: 767px) {
+  .footer .container {
+    flex-direction: column;
+    align-items: center;
+    padding: 30px 10px 309px 10px;
+    background: url("../../assets/images/footer-puppy.png") bottom right 30px no-repeat;
+    background-size: 80%;
+    gap: 40px;
+    justify-content: center;
+  }
+}
 .footer section {
   display: flex;
   flex-direction: column;
   gap: 40px;
+  align-items: center;
 }
 .footer section a {
   min-height: 32px;
   padding-left: 60px;
   font-size: 20px;
   color: #f1cdb3;
+  line-height: 32px;
 }
 .footer .address {
   gap: 32px;
+  align-items: normal;
 }
 .footer .address a {
   padding-left: 42px;
+  line-height: 115%;
+}
+@media (max-width: 767px) {
+  .footer .address {
+    gap: 40px;
+  }
 }/*# sourceMappingURL=style.css.map */
