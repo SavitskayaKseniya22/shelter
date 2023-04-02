@@ -322,6 +322,17 @@ a {
   align-items: center;
   text-align: center;
 }
+@media (max-width: 1279px) {
+  .friends .container {
+    padding: 80px 30px 100px 30px;
+  }
+}
+@media (max-width: 767px) {
+  .friends .container {
+    padding: 42px 10px;
+    gap: 42px;
+  }
+}
 
 .friends-carousel {
   display: flex;
@@ -329,11 +340,42 @@ a {
   justify-content: space-between;
   gap: 53px;
 }
+@media (max-width: 1279px) {
+  .friends-carousel {
+    gap: 12px;
+  }
+}
+@media (max-width: 767px) {
+  .friends-carousel {
+    flex-wrap: wrap;
+    justify-content: center;
+    row-gap: 20px;
+    -moz-column-gap: 80px;
+         column-gap: 80px;
+  }
+  .friends-carousel h3 {
+    font-size: 20px;
+    line-height: 23px;
+  }
+}
 
 .friends-list {
   display: flex;
   justify-content: space-between;
   gap: 90px;
+}
+@media (max-width: 1279px) {
+  .friends-list {
+    gap: 40px;
+  }
+  .friends-list li:last-child {
+    display: none;
+  }
+}
+@media (max-width: 767px) {
+  .friends-list li:not(:first-child) {
+    display: none;
+  }
 }
 
 .friends-card {
@@ -367,6 +409,14 @@ a {
   display: flex;
   justify-content: center;
   align-items: center;
+}
+@media (max-width: 767px) {
+  .friends-pag-button:first-child {
+    order: 222;
+  }
+  .friends-pag-button:last-child {
+    order: 224;
+  }
 }
 
 .help .container {

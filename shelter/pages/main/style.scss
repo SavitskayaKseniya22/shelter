@@ -333,6 +333,13 @@ a {
     gap: 60px;
     align-items: center;
     text-align: center;
+    @media (max-width: 1279px) {
+      padding: 80px 30px 100px 30px;
+    }
+    @media (max-width: 767px) {
+      padding: 42px 10px;
+      gap: 42px;
+    }
   }
 }
 .friends-carousel {
@@ -340,12 +347,36 @@ a {
   align-items: center;
   justify-content: space-between;
   gap: 53px;
+  @media (max-width: 1279px) {
+    gap: 12px;
+  }
+  @media (max-width: 767px) {
+    flex-wrap: wrap;
+    justify-content: center;
+    row-gap: 20px;
+    column-gap: 80px;
+    h3 {
+      font-size: 20px;
+      line-height: 23px;
+    }
+  }
 }
 
 .friends-list {
   display: flex;
   justify-content: space-between;
   gap: 90px;
+  @media (max-width: 1279px) {
+    gap: 40px;
+    li:last-child {
+      display: none;
+    }
+  }
+  @media (max-width: 767px) {
+    li:not(:first-child) {
+      display: none;
+    }
+  }
 }
 
 .friends-card {
@@ -379,6 +410,14 @@ a {
   display: flex;
   justify-content: center;
   align-items: center;
+  @media (max-width: 767px) {
+    &:first-child {
+      order: 222;
+    }
+    &:last-child {
+      order: 224;
+    }
+  }
 }
 
 .help {
