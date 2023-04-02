@@ -445,29 +445,62 @@ a {
   padding: 80px 182px 100px 718px;
   background: url("../../assets/images/donation-dog.png") left 183px bottom 110px no-repeat;
 }
+@media (max-width: 1279px) {
+  .addition .container {
+    padding: 80px 194px 421px 194px;
+    background: url("../../assets/images/donation-dog.png") left 132px bottom 100px no-repeat;
+  }
+}
+@media (max-width: 767px) {
+  .addition .container {
+    padding: 42px 10px 219px 10px;
+    background: url("../../assets/images/donation-dog.png") left 32px bottom 40px no-repeat;
+    background-size: 80%;
+  }
+}
 
 .addition-content {
   display: flex;
   flex-direction: column;
   gap: 20px;
   justify-content: space-between;
-  align-items: left;
+  padding: 0 10px;
+}
+@media (max-width: 767px) {
+  .addition-content {
+    gap: 23px;
+  }
 }
 .addition-content i {
   font-size: 12px;
   line-height: 150%;
   color: #b2b2b2;
 }
+@media (max-width: 767px) {
+  .addition-content h4 {
+    letter-spacing: 0.01em;
+  }
+}
 .addition-content .like-button {
   padding: 10px 15px 10px 60px;
   font-size: 20px;
+  align-self: center;
   line-height: 115%;
   border-radius: 9px;
   width: 350px;
+  white-space: nowrap;
   background: #f1cdb3 url("../../assets/icons/credit-card.svg") left 15px bottom 10px no-repeat;
 }
 .addition-content .like-button:hover {
   background: #fddcc4 url("../../assets/icons/credit-card.svg") left 15px bottom 10px no-repeat;
+}
+@media (max-width: 767px) {
+  .addition-content .like-button {
+    padding: 13px 15px 13px 60px;
+    width: 100%;
+    font-size: 15px;
+    line-height: 110%;
+  }
 }
 
 .footer {
