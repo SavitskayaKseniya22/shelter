@@ -14,25 +14,67 @@ main {
     justify-content: space-between;
     gap: 45px;
     text-align: center;
-    padding: 80px 40px 100px 40px;
+    padding: 80px 0 100px 0;
+    @media (max-width: 1279px) {
+      padding: 80px 0 75px 0;
+      gap: 30px;
+    }
+    @media (max-width: 767px) {
+      padding: 42px 0;
+      gap: 42px;
+    }
   }
-  h1 {
-    font-size: 35px;
+}
+h1 {
+  font-size: 35px;
+  line-height: 130%;
+  letter-spacing: 0.06em;
+  @media (max-width: 767px) {
+    font-size: 25px;
     line-height: 130%;
     letter-spacing: 0.06em;
   }
 }
-
 .friends-list {
   display: flex;
   flex-wrap: wrap;
   row-gap: 30px;
   column-gap: 40px;
   padding: 15px 0;
+  align-items: center;
+  justify-content: center;
+  @media (max-width: 1279px) {
+    row-gap: 30px;
+    padding: unset;
+    li:not(:nth-child(-n + 6)) {
+      display: none;
+    }
+  }
+  @media (max-width: 767px) {
+    li:not(:first-child) {
+      display: flex;
+    }
+    li:not(:nth-child(-n + 3)) {
+      display: none;
+    }
+    h3 {
+      font-size: 20px;
+      line-height: 23px;
+    }
+  }
 }
 
 .friends-carousel {
   gap: 20px;
+  @media (max-width: 1279px) {
+    margin-top: 10px;
+  }
+  @media (max-width: 767px) {
+    flex-wrap: nowrap;
+    gap: 10px;
+    margin-top: unset;
+  }
+
   .like-button {
     padding: 0;
     border: none;
@@ -44,6 +86,14 @@ main {
       &:hover {
         cursor: auto;
         background-color: transparent;
+      }
+    }
+    @media (max-width: 767px) {
+      &:first-child {
+        order: unset;
+      }
+      &:last-child {
+        order: unset;
       }
     }
   }
