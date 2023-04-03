@@ -606,6 +606,9 @@ a {
   color: #f1cdb3;
   line-height: 32px;
 }
+.footer .contacts {
+  align-items: flex-start;
+}
 .footer .address {
   gap: 32px;
   align-items: normal;
