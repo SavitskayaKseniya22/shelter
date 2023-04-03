@@ -14,12 +14,32 @@ main .container {
   justify-content: space-between;
   gap: 45px;
   text-align: center;
-  padding: 80px 40px 100px 40px;
+  padding: 80px 0 100px 0;
 }
-main h1 {
+@media (max-width: 1279px) {
+  main .container {
+    padding: 80px 0 75px 0;
+    gap: 30px;
+  }
+}
+@media (max-width: 767px) {
+  main .container {
+    padding: 42px 0;
+    gap: 42px;
+  }
+}
+
+h1 {
   font-size: 35px;
   line-height: 130%;
   letter-spacing: 0.06em;
+}
+@media (max-width: 767px) {
+  h1 {
+    font-size: 25px;
+    line-height: 130%;
+    letter-spacing: 0.06em;
+  }
 }
 
 .friends-list {
@@ -29,10 +49,45 @@ main h1 {
   -moz-column-gap: 40px;
        column-gap: 40px;
   padding: 15px 0;
+  align-items: center;
+  justify-content: center;
+}
+@media (max-width: 1279px) {
+  .friends-list {
+    row-gap: 30px;
+    padding: unset;
+  }
+  .friends-list li:not(:nth-child(-n+6)) {
+    display: none;
+  }
+}
+@media (max-width: 767px) {
+  .friends-list li:not(:first-child) {
+    display: flex;
+  }
+  .friends-list li:not(:nth-child(-n+3)) {
+    display: none;
+  }
+  .friends-list h3 {
+    font-size: 20px;
+    line-height: 23px;
+  }
 }
 
 .friends-carousel {
   gap: 20px;
+}
+@media (max-width: 1279px) {
+  .friends-carousel {
+    margin-top: 10px;
+  }
+}
+@media (max-width: 767px) {
+  .friends-carousel {
+    flex-wrap: nowrap;
+    gap: 10px;
+    margin-top: unset;
+  }
 }
 .friends-carousel .like-button {
   padding: 0;
@@ -45,4 +100,12 @@ main h1 {
 .friends-carousel .friends-pag-button:disabled:hover {
   cursor: auto;
   background-color: transparent;
+}
+@media (max-width: 767px) {
+  .friends-carousel .friends-pag-button:first-child {
+    order: unset;
+  }
+  .friends-carousel .friends-pag-button:last-child {
+    order: unset;
+  }
 }/*# sourceMappingURL=style.css.map */
