@@ -1,6 +1,6 @@
-@import url('https://fonts.cdnfonts.com/css/georgia');
+@import url("https://fonts.cdnfonts.com/css/georgia");
 
-$emphasis-font-family: Georgia, 'Times New Roman', Times, serif;
+$emphasis-font-family: Georgia, "Times New Roman", Times, serif;
 $main-font-family: Arial, Helvetica, sans-serif;
 $main-font-style: normal;
 $main-font-weight: 400;
@@ -144,7 +144,8 @@ a {
 }
 
 .first-screen {
-  background: url('../../assets/images/start-screen-gradient-background.png') no-repeat top left;
+  background: url("../../assets/images/start-screen-gradient-background.png")
+    no-repeat top left;
   background-size: cover;
 
   display: flex;
@@ -191,17 +192,14 @@ a {
   }
 
   @media (max-width: 767px) {
-    position: absolute;
-    width: 320px;
-    top: 0;
-    right: 0;
-    height: 823px;
-    background-color: #292929;
     flex-direction: column;
     gap: 40px;
     justify-content: center;
     font-size: 32px;
     line-height: 160%;
+    position: relative;
+    right: 0;
+    transition: 1s;
   }
 }
 
@@ -218,13 +216,44 @@ a {
 @media (max-width: 767px) {
   .header-nav__burger {
     display: block;
-  }
-  #burger-icon:not(:checked) ~ .header-nav__links-wrapper {
-    display: none;
+    transform: rotate(0);
+    width: 32px;
+    height: 22px;
+    background: linear-gradient(
+      #f1cdb3 10%,
+      transparent 10% 45%,
+      #f1cdb3 45% 55%,
+      transparent 55% 90%,
+      #f1cdb3 90%
+    );
   }
 
-  #burger-icon:checked + .header-nav__label {
-    display: none;
+  .header-nav__links-wrapper {
+    position: absolute;
+    width: 320px;
+    top: 0;
+    right: 0;
+    height: 100vh;
+    background-color: #292929;
+    display: flex;
+    justify-content: center;
+    opacity: 1;
+    transition-duration: 1s;
+  }
+
+  #burger-icon:not(:checked) ~ .header-nav__links-wrapper {
+    opacity: 0;
+    right: -320px;
+
+    .header-nav__burger {
+      transform: rotate(90deg);
+      transition-duration: 0.5s;
+    }
+  }
+
+  #burger-icon:checked + .header-nav__burger {
+    transform: rotate(90deg);
+    transition-duration: 0.5s;
   }
 
   .header-nav__burger-close {
@@ -232,7 +261,8 @@ a {
     z-index: 1000;
     top: 45px;
     right: 20px;
-    transform: rotate(90deg);
+    transform: rotate(90);
+    //transition-duration: 1s;
   }
 }
 
@@ -267,13 +297,15 @@ a {
     padding: 223px 775px 243px 40px;
     align-items: flex-start;
     flex-direction: column;
-    background: url('../../assets/images/start-screen-puppy.png') right 40px bottom no-repeat;
+    background: url("../../assets/images/start-screen-puppy.png") right 40px
+      bottom no-repeat;
     flex-grow: 1;
     color: #cdcdcd;
 
     @media (max-width: 1279px) {
       padding: 30px 155px 693px 155px;
-      background: url('../../assets/images/start-screen-puppy.png') right 30px bottom no-repeat;
+      background: url("../../assets/images/start-screen-puppy.png") right 30px
+        bottom no-repeat;
       background-size: 75%;
     }
 
@@ -281,7 +313,8 @@ a {
       padding: 30px 10px 377px 10px;
       align-items: center;
       text-align: center;
-      background: url('../../assets/images/start-screen-puppy.png') right 10px bottom no-repeat;
+      background: url("../../assets/images/start-screen-puppy.png") right 10px
+        bottom no-repeat;
       background-size: 80%;
     }
 
@@ -302,16 +335,19 @@ a {
 .about {
   .container {
     padding: 94px 215px 114px 635px;
-    background: url('../../assets/images/about-pets.png') left 220px bottom 100px no-repeat;
+    background: url("../../assets/images/about-pets.png") left 220px bottom
+      100px no-repeat;
     justify-content: right;
 
     @media (max-width: 1279px) {
       padding: 80px 169px 588px 169px;
-      background: url('../../assets/images/about-pets.png') left 234px bottom 100px no-repeat;
+      background: url("../../assets/images/about-pets.png") left 234px bottom
+        100px no-repeat;
     }
     @media (max-width: 767px) {
       padding: 42px 25px 438px 25px;
-      background: url('../../assets/images/about-pets.png') left 28px bottom 42.4px no-repeat;
+      background: url("../../assets/images/about-pets.png") left 28px bottom
+        42.4px no-repeat;
       background-size: 80%;
     }
   }
@@ -367,19 +403,26 @@ a {
   display: flex;
   justify-content: space-between;
   gap: 90px;
+  /*
   li:not(:nth-child(-n+3)){
     display: none;
   }
+  */
+
   @media (max-width: 1279px) {
     gap: 40px;
+    /*
     li:not(:nth-child(-n+2)) {
       display: none;
     }
+    */
   }
   @media (max-width: 767px) {
+    /*
     li:not(:nth-child(-n+1)) {
       display: none;
     }
+    */
   }
 }
 
@@ -490,15 +533,18 @@ a {
 
   .container {
     padding: 80px 182px 100px 718px;
-    background: url('../../assets/images/donation-dog.png') left 183px bottom 110px no-repeat;
+    background: url("../../assets/images/donation-dog.png") left 183px bottom
+      110px no-repeat;
     @media (max-width: 1279px) {
       padding: 80px 194px 421px 194px;
-      background: url('../../assets/images/donation-dog.png') left 132px bottom 100px no-repeat;
+      background: url("../../assets/images/donation-dog.png") left 132px bottom
+        100px no-repeat;
     }
 
     @media (max-width: 767px) {
       padding: 42px 10px 219px 10px;
-      background: url('../../assets/images/donation-dog.png') left 32px bottom 40px no-repeat;
+      background: url("../../assets/images/donation-dog.png") left 32px bottom
+        40px no-repeat;
       background-size: 80%;
     }
   }
@@ -533,10 +579,13 @@ a {
     border-radius: 9px;
     width: 350px;
     white-space: nowrap;
-    background: $emphasis-color url('../../assets/icons/credit-card.svg') left 15px bottom 10px no-repeat;
+    background: $emphasis-color url("../../assets/icons/credit-card.svg") left
+      15px bottom 10px no-repeat;
 
     &:hover {
-      background: $emphasis-hover-color url('../../assets/icons/credit-card.svg') left 15px bottom 10px no-repeat;
+      background: $emphasis-hover-color
+        url("../../assets/icons/credit-card.svg") left 15px bottom 10px
+        no-repeat;
     }
 
     @media (max-width: 767px) {
@@ -549,17 +598,18 @@ a {
 }
 
 .footer {
-  background: url('../../assets/images/start-screen-gradient-background.png') no-repeat;
+  background: url("../../assets/images/start-screen-gradient-background.png")
+    no-repeat;
   background-size: cover;
 
   .footer-email {
-    background: url('../../assets/icons/icon-email.svg') center left no-repeat;
+    background: url("../../assets/icons/icon-email.svg") center left no-repeat;
   }
   .footer-tel {
-    background: url('../../assets/icons/icon-phone.svg') center left no-repeat;
+    background: url("../../assets/icons/icon-phone.svg") center left no-repeat;
   }
   .footer-mail {
-    background: url('../../assets/icons/icon-marker.png') center left no-repeat;
+    background: url("../../assets/icons/icon-marker.png") center left no-repeat;
   }
 
   h2 {
@@ -568,11 +618,13 @@ a {
 
   .container {
     padding: 56px 40px;
-    background: url('../../assets/images/footer-puppy.png') top 40px right 40px no-repeat;
+    background: url("../../assets/images/footer-puppy.png") top 40px right 40px
+      no-repeat;
     gap: 160px;
     @media (max-width: 1279px) {
       padding: 30px 30px 375px 30px;
-      background: url('../../assets/images/footer-puppy.png') bottom right 234px no-repeat;
+      background: url("../../assets/images/footer-puppy.png") bottom right 234px
+        no-repeat;
       gap: 60px;
       justify-content: center;
     }
@@ -581,7 +633,8 @@ a {
       flex-direction: column;
       align-items: center;
       padding: 30px 10px 309px 10px;
-      background: url('../../assets/images/footer-puppy.png') bottom right 30px no-repeat;
+      background: url("../../assets/images/footer-puppy.png") bottom right 30px
+        no-repeat;
       background-size: 80%;
       gap: 40px;
       justify-content: center;
@@ -620,7 +673,7 @@ a {
   }
 }
 
-.popup[open]{
+.popup[open] {
   position: fixed;
   background-color: white;
   max-width: 900px;
@@ -630,27 +683,26 @@ a {
   transform: translate(-50%, -50%);
   display: flex;
   justify-content: space-between;
-  padding:unset;
+  padding: unset;
   border-radius: 9px;
   border: 0;
 
   @media (max-width: 1279px) {
-      width: 82%;
-    }
-    @media (max-width: 767px) {
-      width: 75%;
-    }
+    width: 82%;
+  }
+  @media (max-width: 767px) {
+    width: 75%;
+  }
 
-  .popup-img{
+  .popup-img {
     width: 55.6%;
     height: auto;
     border-radius: 9px;
     @media (max-width: 767px) {
-        display: none;
-      }
+      display: none;
+    }
   }
-  .popup-content{
-    
+  .popup-content {
     width: 44.4%;
     padding: 50px 20px 88px 29px;
     display: flex;
@@ -659,52 +711,47 @@ a {
     align-items: flex-start;
 
     @media (max-width: 1279px) {
-        padding: 10px 10px 37px 10px;
+      padding: 10px 10px 37px 10px;
+    }
+    @media (max-width: 767px) {
+      width: 100%;
+      padding: 10px;
+      align-items: center;
+
+      ul {
+        align-self: flex-start;
       }
-        @media (max-width: 767px) {
-          width: 100%;
-          padding: 10px;
-          align-items: center;
+      h2 {
+        margin-top: 10px;
+      }
+    }
 
-          ul{
-            align-self: flex-start;
-          }
-          h2{
-            margin-top: 10px;
-          }
-        }
-
-    li{
+    li {
       list-style-type: disc;
       margin-left: 15px;
-      
     }
-    p{
+    p {
       line-height: 110%;
       @media (max-width: 1279px) {
-          font-size: 13px;
-        }
+        font-size: 13px;
+      }
       @media (max-width: 767px) {
-          margin-top: 20px;
-          margin-bottom: 24px;
-        }
+        margin-top: 20px;
+        margin-bottom: 24px;
+      }
     }
-    
   }
-  .popup-close{
+  .popup-close {
     position: absolute;
     right: -37px;
-    top:-52px;
+    top: -52px;
     width: 52px;
     height: 52px;
     border-radius: 50%;
-    border: 2px solid #F1CDB3;
+    border: 2px solid #f1cdb3;
     background-color: transparent;
     @media (max-width: 767px) {
-        right: -26px;
-      }
+      right: -26px;
+    }
   }
- 
-
-  
 }
