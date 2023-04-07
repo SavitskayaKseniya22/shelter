@@ -1,17 +1,27 @@
 export class Header {
     constructor() {
-        this.renderHeader();
+        this.addListener();
     }
 
 
 
 
-    renderHeader() {
-        // render(".friends-list", this.makeCorousel(), "replacement")
-    }
+    addListener() {
+        document.addEventListener('click', (event) => {
+            if (event.target.tagName == "A" && event.target.closest(".header-nav__links")) {
+                this.uncheck()
+
+            }
+        });
+
+        document.getElementById("burger-icon").addEventListener('change', function (e) {
+            document.body.style.overflow = e.target.checked === true ? 'hidden' : '';
+        });
 
 
-    makeSalut() {
-        // alert(1)
     }
+    uncheck() {
+        document.getElementById("burger-icon").checked = false;
+    }
+
 }
