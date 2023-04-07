@@ -1,5 +1,5 @@
-import data from "../../../assets/pets.json" assert {type: 'json'};
-import { AnimalCard } from "../scripts/AnimalCard.js";
+import data from "./pets.json" assert {type: 'json'};
+import { AnimalCard } from "./AnimalCard.js";
 
 export function shuffle(array) {
     for (let i = array.length - 1; i > 0; i--) {
@@ -14,7 +14,6 @@ export function render(selector, value, action) {
     if (action == 'adding') {
         document.querySelector(selector).innerHTML += value;
     } else if (action == "replacement") {
-        console.log(1)
         document.querySelector(selector).innerHTML = value;
     }
 

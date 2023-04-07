@@ -1,5 +1,5 @@
 
-import { shuffle, makeAnimalCardsList, render } from "../scripts/utilities.js";
+import { shuffle, makeAnimalCardsList, render } from "./utilities.js";
 
 export class Corousel {
     constructor() {
@@ -12,8 +12,6 @@ export class Corousel {
         return cardsFromData.map((element) => element.renderShortCard()).join("");
 
     }
-
-
 
 
     renderCorousel() {

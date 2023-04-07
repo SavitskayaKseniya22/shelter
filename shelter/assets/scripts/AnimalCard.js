@@ -9,18 +9,24 @@ export class AnimalCard {
     this.inoculations = object.inoculations
     this.diseases = object.diseases
     this.parasites = object.parasites
+
   }
 
   renderShortCard() {
-    return `<li class="friends-card">
+    return `<li class="friends-card" onclick="window.popup.showModal()">
               <img src=${this.img} alt="animal-img" width="270" height="270" />
               <h3>${this.name}</h3>
-              <a href="#" class="like-button like-button_white">Learn more</a>
+              <button type="button" class="like-button like-button_white">Learn more</button>
             </li>`
   }
 
+  openAndFillPopup() {
+    window.popup.showModal();
+    document.querySelector(".popup").innerHTML = this.renderLongCard();
+  }
+
   renderLongCard() {
-    return `<dialog class="popup"  open>
+    return `
           <img class="popup-img" src=${this.img} alt="animal-img" width="270" height="270" />
           <div class="popup-content">
             <h2>${this.name}</h2>
@@ -33,7 +39,8 @@ export class AnimalCard {
               <li><b>Parasites: </b>${this.parasites}</li>
             </ul>
           </div>
-          <button class="popup-close"><img src="../../assets/icons/cross.png" alt="cross" width="12" height="12" /></button>
-        </dialog>`
+          <button class="popup-close" type="button" onclick="window.popup.close();"><img src="../../assets/icons/cross.png" alt="cross" width="12" height="12" /></button>
+        `
+
   }
 }

@@ -367,14 +367,17 @@ a {
   display: flex;
   justify-content: space-between;
   gap: 90px;
+  li:not(:nth-child(-n+3)){
+    display: none;
+  }
   @media (max-width: 1279px) {
     gap: 40px;
-    li:last-child {
+    li:not(:nth-child(-n+2)) {
       display: none;
     }
   }
   @media (max-width: 767px) {
-    li:not(:first-child) {
+    li:not(:nth-child(-n+1)) {
       display: none;
     }
   }
@@ -617,7 +620,7 @@ a {
   }
 }
 
-.popup{
+.popup[open]{
   position: fixed;
   background-color: white;
   max-width: 900px;

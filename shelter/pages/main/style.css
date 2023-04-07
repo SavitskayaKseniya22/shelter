@@ -365,16 +365,19 @@ a {
   justify-content: space-between;
   gap: 90px;
 }
+.friends-list li:not(:nth-child(-n+3)) {
+  display: none;
+}
 @media (max-width: 1279px) {
   .friends-list {
     gap: 40px;
   }
-  .friends-list li:last-child {
+  .friends-list li:not(:nth-child(-n+2)) {
     display: none;
   }
 }
 @media (max-width: 767px) {
-  .friends-list li:not(:first-child) {
+  .friends-list li:not(:nth-child(-n+1)) {
     display: none;
   }
 }
@@ -624,7 +627,7 @@ a {
   }
 }
 
-.popup {
+.popup[open] {
   position: fixed;
   background-color: white;
   max-width: 900px;
@@ -639,26 +642,26 @@ a {
   border: 0;
 }
 @media (max-width: 1279px) {
-  .popup {
+  .popup[open] {
     width: 82%;
   }
 }
 @media (max-width: 767px) {
-  .popup {
+  .popup[open] {
     width: 75%;
   }
 }
-.popup .popup-img {
+.popup[open] .popup-img {
   width: 55.6%;
   height: auto;
   border-radius: 9px;
 }
 @media (max-width: 767px) {
-  .popup .popup-img {
+  .popup[open] .popup-img {
     display: none;
   }
 }
-.popup .popup-content {
+.popup[open] .popup-content {
   width: 44.4%;
   padding: 50px 20px 88px 29px;
   display: flex;
@@ -667,42 +670,42 @@ a {
   align-items: flex-start;
 }
 @media (max-width: 1279px) {
-  .popup .popup-content {
+  .popup[open] .popup-content {
     padding: 10px 10px 37px 10px;
   }
 }
 @media (max-width: 767px) {
-  .popup .popup-content {
+  .popup[open] .popup-content {
     width: 100%;
     padding: 10px;
     align-items: center;
   }
-  .popup .popup-content ul {
+  .popup[open] .popup-content ul {
     align-self: flex-start;
   }
-  .popup .popup-content h2 {
+  .popup[open] .popup-content h2 {
     margin-top: 10px;
   }
 }
-.popup .popup-content li {
+.popup[open] .popup-content li {
   list-style-type: disc;
   margin-left: 15px;
 }
-.popup .popup-content p {
+.popup[open] .popup-content p {
   line-height: 110%;
 }
 @media (max-width: 1279px) {
-  .popup .popup-content p {
+  .popup[open] .popup-content p {
     font-size: 13px;
   }
 }
 @media (max-width: 767px) {
-  .popup .popup-content p {
+  .popup[open] .popup-content p {
     margin-top: 20px;
     margin-bottom: 24px;
   }
 }
-.popup .popup-close {
+.popup[open] .popup-close {
   position: absolute;
   right: -37px;
   top: -52px;
@@ -713,7 +716,7 @@ a {
   background-color: transparent;
 }
 @media (max-width: 767px) {
-  .popup .popup-close {
+  .popup[open] .popup-close {
     right: -26px;
   }
 }/*# sourceMappingURL=style.css.map */
