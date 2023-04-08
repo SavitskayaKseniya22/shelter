@@ -404,6 +404,7 @@ a {
 
 .friends-list {
   display: flex;
+  justify-content: center;
   gap: 0;
   overflow: hidden;
   width: 990px;
@@ -423,11 +424,23 @@ a {
   display: flex;
   gap: 90px;
 }
+.friends-list ul li:not(:nth-child(-n+3)) {
+  display: none;
+}
 @media (max-width: 1279px) {
   .friends-list ul {
     gap: 40px;
   }
+  .friends-list ul li:not(:nth-child(-n+2)) {
+    display: none;
+  }
 }
+@media (max-width: 767px) {
+  .friends-list ul li:not(:nth-child(-n+1)) {
+    display: none;
+  }
+}
+
 .friends-card {
   width: 270px;
   height: 435px;
@@ -773,17 +786,4 @@ a {
     background-color: #fddcc4;
     border: 2px solid #fddcc4;
   }
-}
-
-/*
-.friends-list ul {
-  transition: transform 1s;
-}
-
-.active-transition__next {
-  transform: translateX(-990px);
-}
-.active-transition__previous {
-  transform: translateX(990px);
-}
-*//*# sourceMappingURL=style.css.map */
+}/*# sourceMappingURL=style.css.map */

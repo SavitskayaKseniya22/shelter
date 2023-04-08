@@ -7,11 +7,15 @@ export class Corousel {
         shuffle(this.cardsFromData)
         this.activeCards = this.cardsFromData.slice(0, 3);
         this.activeContent = this.makeContentFromCard(this.activeCards)
+        this.nextCards = this.cardsFromData.slice(3, 6);
+        this.nextContent = this.makeContentFromCard(this.activeCards)
+        this.previousCards = this.cardsFromData.slice(5, 8);
+        this.previousContent = this.makeContentFromCard(this.activeCards)
         render(".friends-list__active", this.activeContent, "replacement")
-
-
+        render(".friends-list__next", this.nextContent, "replacement")
+        render(".friends-list__previous", this.previousContent, "replacement")
         this.addListener()
-        this.numberOfActiveCards = 3;
+        this.offset = "990px";
 
 
     }
@@ -42,8 +46,8 @@ export class Corousel {
         document.addEventListener('click', (event) => {
 
             if (event.target.closest(".friends-pag-button__right")) {
+                this.checkOffset()
                 this.nextCards = this.makeAnotherPart();
-
                 this.nextContent = this.makeContentFromCard(this.nextCards);
                 render(".friends-list__next", this.nextContent, "replacement")
 
@@ -51,8 +55,8 @@ export class Corousel {
                 this.buffer = this.activeContent;
 
 
-                document.querySelector(".friends-list__active").style = "transform: translateX(-990px); transition: transform 1s";
-                document.querySelector(".friends-list__next").style = "transform: translateX(-990px); transition: transform 1s";
+                document.querySelector(".friends-list__active").style = `transform: translateX(-${this.offset}); transition: transform 1s`;
+                document.querySelector(".friends-list__next").style = `transform: translateX(-${this.offset}); transition: transform 1s`;
 
                 setTimeout(() => {
                     render(".friends-list__active", this.nextContent, "replacement")
@@ -61,45 +65,53 @@ export class Corousel {
                 }, "1000");
 
                 this.activeCards = this.nextCards;
-                /*
-                                document.querySelector(".friends-list__next").style.transform = "translateX(-990px)";
-                
-                
-                
-                
-                                setTimeout(() => {
-                                    document.querySelector(".friends-list").appendChild(document.createElement('ul')).innerHTML = this.part.map((element) => element.renderShortCard()).join("");
-                                }, "2000");
-                
-                                //document.querySelector(".friends-list").appendChild(document.createElement('ul')).innerHTML = this.part.map((element) => element.renderShortCard()).join("");
-                
-                */
+
 
 
 
             } else if (event.target.closest(".friends-pag-button__left")) {
+                this.checkOffset()
+                this.previousCards = this.makeAnotherPart();
 
-                document.querySelector(".friends-list__active").style.transform = "translateX(990px)";
-                document.querySelector(".friends-list__previous").style.transform = "translateX(990px)";
-                document.querySelector(".friends-list__next").style.transform = "translateX(990px)";
+                this.previousContent = this.makeContentFromCard(this.previousCards);
+                render(".friends-list__previous", this.previousContent, "replacement")
+
+
+                this.buffer = this.activeContent;
+
+
+                document.querySelector(".friends-list__active").style = `transform: translateX(${this.offset}); transition: transform 1s`;
+                document.querySelector(".friends-list__previous").style = `transform: translateX(${this.offset}); transition: transform 1s`;
+
+                setTimeout(() => {
+                    render(".friends-list__active", this.previousContent, "replacement")
+                    document.querySelector(".friends-list__active").style = "";
+                    document.querySelector(".friends-list__previous").style = "";
+                }, "1000");
+
+                this.activeCards = this.previousCards;
+
+
             }
 
 
         });
+
 
         addEventListener("resize", (event) => {
-            if (window.innerWidth > 1279) {
-                this.numberOfActiveCards = 3
-            } else if (window.innerWidth < 1279 && window.innerWidth > 767) {
-                this.numberOfActiveCards = 2
-            } else if (window.innerWidth < 767) {
-                this.numberOfActiveCards = 1
-            }
-            //console.log(this.numberOfActiveCards)
-
+            this.checkOffset()
         });
 
 
 
+    }
+    checkOffset() {
+        if (window.innerWidth > 1279) {
+            this.offset = "990px"
+        } else if (window.innerWidth < 1279 && window.innerWidth > 767) {
+            this.offset = "620px"
+        } else if (window.innerWidth < 767) {
+            this.offset = "310px"
+        }
     }
 }

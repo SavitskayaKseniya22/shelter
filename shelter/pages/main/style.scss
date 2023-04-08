@@ -424,7 +424,7 @@ a {
 
 .friends-list {
   display: flex;
-  //justify-content: center;
+  justify-content: center;
   gap: 0;
   overflow: hidden;
   width: 990px;
@@ -440,10 +440,20 @@ a {
   ul {
     display: flex;
     gap: 90px;
+
+    li:not(:nth-child(-n + 3)) {
+      display: none;
+    }
     @media (max-width: 1279px) {
       gap: 40px;
+      li:not(:nth-child(-n + 2)) {
+        display: none;
+      }
     }
     @media (max-width: 767px) {
+      li:not(:nth-child(-n + 1)) {
+        display: none;
+      }
     }
   }
 }
@@ -787,15 +797,3 @@ a {
     }
   }
 }
-/*
-.friends-list ul {
-  transition: transform 1s;
-}
-
-.active-transition__next {
-  transform: translateX(-990px);
-}
-.active-transition__previous {
-  transform: translateX(990px);
-}
-*/
