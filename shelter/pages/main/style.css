@@ -170,6 +170,7 @@ a {
   display: flex;
   gap: 35px;
   align-items: center;
+  white-space: nowrap;
 }
 .header-nav__links a {
   font-family: Arial, Helvetica, sans-serif;
@@ -232,8 +233,12 @@ a {
     background: linear-gradient(#f1cdb3 10%, transparent 10% 45%, #f1cdb3 45% 55%, transparent 55% 90%, #f1cdb3 90%);
   }
   #burger-icon:not(:checked) ~ .header-nav__links-wrapper {
+    width: 0;
     opacity: 0;
-    right: -320px;
+    right: 0px;
+  }
+  #burger-icon:not(:checked) ~ .header-nav__links-wrapper .header-nav__links a {
+    display: none;
   }
   #burger-icon:checked ~ .header-nav__links-wrapper {
     z-index: 11111;
@@ -401,29 +406,21 @@ a {
   display: flex;
   justify-content: space-between;
   gap: 90px;
-  /*
-  li:not(:nth-child(-n+3)){
-    display: none;
-  }
-  */
+}
+.friends-list li:not(:nth-child(-n+3)) {
+  display: none;
 }
 @media (max-width: 1279px) {
   .friends-list {
     gap: 40px;
-    /*
-    li:not(:nth-child(-n+2)) {
-      display: none;
-    }
-    */
+  }
+  .friends-list li:not(:nth-child(-n+2)) {
+    display: none;
   }
 }
 @media (max-width: 767px) {
-  .friends-list {
-    /*
-    li:not(:nth-child(-n+1)) {
-      display: none;
-    }
-    */
+  .friends-list li:not(:nth-child(-n+1)) {
+    display: none;
   }
 }
 
@@ -673,18 +670,15 @@ a {
 }
 
 .popup[open] {
-  position: fixed;
   background-color: white;
   max-width: 900px;
   width: 70.3%;
   left: 50%;
   top: 50%;
   transform: translate(-50%, -50%);
-  display: flex;
-  justify-content: space-between;
-  padding: unset;
   border-radius: 9px;
-  border: 0;
+  border: none;
+  padding: 0;
 }
 @media (max-width: 1279px) {
   .popup[open] {
@@ -695,6 +689,12 @@ a {
   .popup[open] {
     width: 75%;
   }
+}
+.popup[open] .dialog__wrapper {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  height: 100%;
 }
 .popup[open] .popup-img {
   width: 55.6%;
@@ -763,5 +763,10 @@ a {
 @media (max-width: 767px) {
   .popup[open] .popup-close {
     right: -26px;
+    transition: 0.5s;
+  }
+  .popup[open] .popup-close:hover {
+    background-color: #fddcc4;
+    border: 2px solid #fddcc4;
   }
 }/*# sourceMappingURL=style.css.map */

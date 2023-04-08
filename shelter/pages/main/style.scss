@@ -178,6 +178,7 @@ a {
   display: flex;
   gap: 35px;
   align-items: center;
+  white-space: nowrap;
 
   a {
     font-family: $main-font-family;
@@ -251,8 +252,13 @@ a {
   }
 
   #burger-icon:not(:checked) ~ .header-nav__links-wrapper {
+    width: 0;
     opacity: 0;
-    right: -320px;
+    right: 0px;
+
+    .header-nav__links a {
+      display: none;
+    }
   }
 
   #burger-icon:checked ~ .header-nav__links-wrapper {
@@ -420,26 +426,22 @@ a {
   display: flex;
   justify-content: space-between;
   gap: 90px;
-  /*
-  li:not(:nth-child(-n+3)){
+
+  li:not(:nth-child(-n + 3)) {
     display: none;
   }
-  */
 
   @media (max-width: 1279px) {
     gap: 40px;
-    /*
-    li:not(:nth-child(-n+2)) {
+
+    li:not(:nth-child(-n + 2)) {
       display: none;
     }
-    */
   }
   @media (max-width: 767px) {
-    /*
-    li:not(:nth-child(-n+1)) {
+    li:not(:nth-child(-n + 1)) {
       display: none;
     }
-    */
   }
 }
 
@@ -691,24 +693,28 @@ a {
 }
 
 .popup[open] {
-  position: fixed;
   background-color: white;
   max-width: 900px;
   width: 70.3%;
   left: 50%;
   top: 50%;
   transform: translate(-50%, -50%);
-  display: flex;
-  justify-content: space-between;
-  padding: unset;
+
   border-radius: 9px;
-  border: 0;
+  border: none;
+  padding: 0;
 
   @media (max-width: 1279px) {
     width: 82%;
   }
   @media (max-width: 767px) {
     width: 75%;
+  }
+  .dialog__wrapper {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    height: 100%;
   }
 
   .popup-img {
@@ -767,8 +773,14 @@ a {
     border-radius: 50%;
     border: 2px solid #f1cdb3;
     background-color: transparent;
+
     @media (max-width: 767px) {
       right: -26px;
+      transition: 0.5s;
+      &:hover {
+        background-color: #fddcc4;
+        border: 2px solid #fddcc4;
+      }
     }
   }
 }
