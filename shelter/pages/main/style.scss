@@ -424,23 +424,26 @@ a {
 
 .friends-list {
   display: flex;
-  justify-content: space-between;
-  gap: 90px;
-
-  li:not(:nth-child(-n + 3)) {
-    display: none;
-  }
+  //justify-content: center;
+  gap: 0;
+  overflow: hidden;
+  width: 990px;
 
   @media (max-width: 1279px) {
     gap: 40px;
-
-    li:not(:nth-child(-n + 2)) {
-      display: none;
-    }
+    width: 580px;
   }
   @media (max-width: 767px) {
-    li:not(:nth-child(-n + 1)) {
-      display: none;
+    width: 270px;
+  }
+
+  ul {
+    display: flex;
+    gap: 90px;
+    @media (max-width: 1279px) {
+      gap: 40px;
+    }
+    @media (max-width: 767px) {
     }
   }
 }
@@ -784,3 +787,15 @@ a {
     }
   }
 }
+/*
+.friends-list ul {
+  transition: transform 1s;
+}
+
+.active-transition__next {
+  transform: translateX(-990px);
+}
+.active-transition__previous {
+  transform: translateX(990px);
+}
+*/
