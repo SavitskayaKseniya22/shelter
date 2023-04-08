@@ -186,6 +186,11 @@ a {
     transition: border-bottom 0.5s;
     color: #fafafa;
 
+    &.header-nav__links-active {
+      border-bottom: 3px solid #f1cdb3;
+      pointer-events: none;
+    }
+
     &:hover {
       border-bottom: 3px solid #f1cdb3;
     }
@@ -225,9 +230,13 @@ a {
     justify-content: center;
     opacity: 1;
     transition-duration: 1s;
+    a {
+      color: #cdcdcd;
+    }
   }
   .header-nav__burger {
     display: block;
+    cursor: pointer;
     transform: rotate(0);
     transition-duration: 2s;
     width: 32px;
@@ -247,6 +256,7 @@ a {
   }
 
   #burger-icon:checked ~ .header-nav__links-wrapper {
+    z-index: 11111;
     .header-nav__burger {
       transform: rotate(90deg);
     }

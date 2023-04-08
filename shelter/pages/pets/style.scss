@@ -1,6 +1,9 @@
 .header {
   a {
     color: #545454;
+    @media (max-width: 767px) {
+      color: #cdcdcd;
+    }
   }
   p {
     color: #292929;

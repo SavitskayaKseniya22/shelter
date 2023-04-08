@@ -178,6 +178,10 @@ a {
   transition: border-bottom 0.5s;
   color: #fafafa;
 }
+.header-nav__links a.header-nav__links-active {
+  border-bottom: 3px solid #f1cdb3;
+  pointer-events: none;
+}
 .header-nav__links a:hover {
   border-bottom: 3px solid #f1cdb3;
 }
@@ -215,8 +219,12 @@ a {
     opacity: 1;
     transition-duration: 1s;
   }
+  .header-nav__links-wrapper a {
+    color: #cdcdcd;
+  }
   .header-nav__burger {
     display: block;
+    cursor: pointer;
     transform: rotate(0);
     transition-duration: 2s;
     width: 32px;
@@ -226,6 +234,9 @@ a {
   #burger-icon:not(:checked) ~ .header-nav__links-wrapper {
     opacity: 0;
     right: -320px;
+  }
+  #burger-icon:checked ~ .header-nav__links-wrapper {
+    z-index: 11111;
   }
   #burger-icon:checked ~ .header-nav__links-wrapper .header-nav__burger {
     transform: rotate(90deg);

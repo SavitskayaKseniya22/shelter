@@ -9,7 +9,6 @@ export function shuffle(array) {
 
 }
 
-
 export function render(selector, value, action) {
     if (action == 'adding') {
         document.querySelector(selector).innerHTML += value;
@@ -24,4 +23,12 @@ export const repeatArray = (arr, numberOfRepeat) => Array(numberOfRepeat).fill(a
 export function makeAnimalCardsList(numberOfRepeat) {
     let wholeData = repeatArray(data, numberOfRepeat)
     return wholeData.map((element) => (new AnimalCard(element)))
+}
+
+export function makeShadowBackground(value) {
+    document.body.style.overflow = value === true ? 'hidden' : '';
+}
+
+export function toggleCheckbox(checkbox, value) {
+    checkbox.checked = value;
 }
