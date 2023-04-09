@@ -32,3 +32,13 @@ export function makeShadowBackground(value) {
 export function toggleCheckbox(checkbox, value) {
     checkbox.checked = value;
 }
+
+export function checkOffset() {
+    if (window.innerWidth > 1279) {
+        return "990px"
+    } else if (window.innerWidth < 1279 && window.innerWidth > 767) {
+        return "620px"
+    } else if (window.innerWidth < 767) {
+        return "310px"
+    }
+}

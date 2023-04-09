@@ -1,5 +1,5 @@
 
-import { shuffle, makeAnimalCardsList, render } from "./utilities.js";
+import { shuffle, makeAnimalCardsList, render, checkOffset } from "./utilities.js";
 
 export class Corousel {
     constructor() {
@@ -15,7 +15,7 @@ export class Corousel {
         render(".friends-list__next", this.nextContent, "replacement")
         render(".friends-list__previous", this.previousContent, "replacement")
         this.addListener()
-        this.offset = "990px";
+
 
 
     }
@@ -46,7 +46,7 @@ export class Corousel {
         document.addEventListener('click', (event) => {
 
             if (event.target.closest(".friends-pag-button__right")) {
-                this.checkOffset()
+                this.offset = checkOffset()
                 this.nextCards = this.makeAnotherPart();
                 this.nextContent = this.makeContentFromCard(this.nextCards);
                 render(".friends-list__next", this.nextContent, "replacement")
@@ -70,7 +70,7 @@ export class Corousel {
 
 
             } else if (event.target.closest(".friends-pag-button__left")) {
-                this.checkOffset()
+                this.offset = checkOffset()
                 this.previousCards = this.makeAnotherPart();
 
                 this.previousContent = this.makeContentFromCard(this.previousCards);
@@ -98,20 +98,10 @@ export class Corousel {
         });
 
 
-        addEventListener("resize", (event) => {
-            this.checkOffset()
-        });
+
 
 
 
     }
-    checkOffset() {
-        if (window.innerWidth > 1279) {
-            this.offset = "990px"
-        } else if (window.innerWidth < 1279 && window.innerWidth > 767) {
-            this.offset = "620px"
-        } else if (window.innerWidth < 767) {
-            this.offset = "310px"
-        }
-    }
+
 }
