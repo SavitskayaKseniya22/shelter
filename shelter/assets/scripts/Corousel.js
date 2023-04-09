@@ -45,7 +45,7 @@ export class Corousel {
     addListener() {
         document.addEventListener('click', (event) => {
 
-            if (event.target.closest(".friends-pag-button__right")) {
+            if (event.target.closest(".friends-corousel-button__right")) {
                 this.offset = checkOffset()
                 this.nextCards = this.makeAnotherPart();
                 this.nextContent = this.makeContentFromCard(this.nextCards);
@@ -69,7 +69,7 @@ export class Corousel {
 
 
 
-            } else if (event.target.closest(".friends-pag-button__left")) {
+            } else if (event.target.closest(".friends-corousel-button__left")) {
                 this.offset = checkOffset()
                 this.previousCards = this.makeAnotherPart();
 

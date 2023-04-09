@@ -93,7 +93,7 @@ h1 {
     padding: 0;
     border: none;
   }
-  .friends-pag-button {
+  .friends-control-button {
     &:disabled {
       cursor: auto;
       border: 2px solid #cdcdcd;
@@ -110,5 +110,9 @@ h1 {
         order: unset;
       }
     }
+  }
+  .friends-pag-button__left_last img,
+  .friends-pag-button__left img {
+    transform: rotate(180deg);
   }
 }

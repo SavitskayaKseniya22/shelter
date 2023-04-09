@@ -465,7 +465,7 @@ a {
   border: 2px solid #fddcc4;
 }
 
-.friends-pag-button {
+.friends-control-button {
   width: 52px;
   height: 52px;
   border-radius: 50px;
@@ -474,10 +474,10 @@ a {
   align-items: center;
 }
 @media (max-width: 767px) {
-  .friends-pag-button:first-child {
+  .friends-control-button:first-child {
     order: 222;
   }
-  .friends-pag-button:last-child {
+  .friends-control-button:last-child {
     order: 224;
   }
 }

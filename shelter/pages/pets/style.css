@@ -108,19 +108,23 @@ h1 {
   padding: 0;
   border: none;
 }
-.friends-carousel .friends-pag-button:disabled {
+.friends-carousel .friends-control-button:disabled {
   cursor: auto;
   border: 2px solid #cdcdcd;
 }
-.friends-carousel .friends-pag-button:disabled:hover {
+.friends-carousel .friends-control-button:disabled:hover {
   cursor: auto;
   background-color: transparent;
 }
 @media (max-width: 767px) {
-  .friends-carousel .friends-pag-button:first-child {
+  .friends-carousel .friends-control-button:first-child {
     order: unset;
   }
-  .friends-carousel .friends-pag-button:last-child {
+  .friends-carousel .friends-control-button:last-child {
     order: unset;
   }
+}
+.friends-carousel .friends-pag-button__left_last img,
+.friends-carousel .friends-pag-button__left img {
+  transform: rotate(180deg);
 }/*# sourceMappingURL=style.css.map */
