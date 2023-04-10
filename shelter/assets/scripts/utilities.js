@@ -25,7 +25,7 @@ export function makeAnimalCardsList(numberOfRepeat) {
     return wholeData.map((element) => (new AnimalCard(element)))
 }
 
-export function makeShadowBackground(value) {
+export function blockScroll(value) {
     document.body.style.overflow = value === true ? 'hidden' : '';
 }
 

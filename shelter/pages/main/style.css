@@ -691,7 +691,22 @@ a {
   }
 }
 
-.popup[open] {
+.open {
+  width: 100vw;
+  height: 100vh;
+}
+.open::before {
+  content: "";
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  background-color: rgba(0, 0, 0, 0.5);
+  top: 0;
+  left: 0;
+}
+.open .dialog__wrapper {
+  display: flex;
+  justify-content: space-between;
   background-color: white;
   max-width: 900px;
   width: 70.3%;
@@ -701,34 +716,29 @@ a {
   border-radius: 9px;
   border: none;
   padding: 0;
+  position: fixed;
 }
 @media (max-width: 1279px) {
-  .popup[open] {
+  .open .dialog__wrapper {
     width: 82%;
   }
 }
 @media (max-width: 767px) {
-  .popup[open] {
+  .open .dialog__wrapper {
     width: 75%;
   }
 }
-.popup[open] .dialog__wrapper {
-  display: flex;
-  justify-content: space-between;
-  width: 100%;
-  height: 100%;
-}
-.popup[open] .popup-img {
+.open .popup-img {
   width: 55.6%;
   height: auto;
   border-radius: 9px;
 }
 @media (max-width: 767px) {
-  .popup[open] .popup-img {
+  .open .popup-img {
     display: none;
   }
 }
-.popup[open] .popup-content {
+.open .popup-content {
   width: 44.4%;
   padding: 50px 20px 88px 29px;
   display: flex;
@@ -737,42 +747,42 @@ a {
   align-items: flex-start;
 }
 @media (max-width: 1279px) {
-  .popup[open] .popup-content {
+  .open .popup-content {
     padding: 10px 10px 37px 10px;
   }
 }
 @media (max-width: 767px) {
-  .popup[open] .popup-content {
+  .open .popup-content {
     width: 100%;
     padding: 10px;
     align-items: center;
   }
-  .popup[open] .popup-content ul {
+  .open .popup-content ul {
     align-self: flex-start;
   }
-  .popup[open] .popup-content h2 {
+  .open .popup-content h2 {
     margin-top: 10px;
   }
 }
-.popup[open] .popup-content li {
+.open .popup-content li {
   list-style-type: disc;
   margin-left: 15px;
 }
-.popup[open] .popup-content p {
+.open .popup-content p {
   line-height: 110%;
 }
 @media (max-width: 1279px) {
-  .popup[open] .popup-content p {
+  .open .popup-content p {
     font-size: 13px;
   }
 }
 @media (max-width: 767px) {
-  .popup[open] .popup-content p {
+  .open .popup-content p {
     margin-top: 20px;
     margin-bottom: 24px;
   }
 }
-.popup[open] .popup-close {
+.open .popup-close {
   position: absolute;
   right: -37px;
   top: -52px;
@@ -783,11 +793,11 @@ a {
   background-color: transparent;
 }
 @media (max-width: 767px) {
-  .popup[open] .popup-close {
+  .open .popup-close {
     right: -26px;
     transition: 0.5s;
   }
-  .popup[open] .popup-close:hover {
+  .open .popup-close:hover {
     background-color: #fddcc4;
     border: 2px solid #fddcc4;
   }

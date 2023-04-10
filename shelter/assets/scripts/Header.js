@@ -1,4 +1,4 @@
-import { makeShadowBackground, toggleCheckbox } from "../scripts/utilities.js";
+import { blockScroll, toggleCheckbox } from "../scripts/utilities.js";
 
 export class Header {
     constructor() {
@@ -12,19 +12,19 @@ export class Header {
         document.addEventListener('click', (event) => {
             if (event.target.tagName == "A" && event.target.closest(".header-nav__links")) {
                 toggleCheckbox(document.getElementById("burger-icon"), false);
-                makeShadowBackground(false)
+                blockScroll(false)
 
             }
         });
 
         document.getElementById("burger-icon").addEventListener('change', function (e) {
-            makeShadowBackground(e.target.checked)
+            blockScroll(e.target.checked)
         });
 
         addEventListener("resize", (event) => {
             if (document.getElementById("burger-icon").checked && window.innerWidth > 767 && document.body.style.overflow == 'hidden') {
                 toggleCheckbox(document.getElementById("burger-icon"), false);
-                makeShadowBackground(false)
+                blockScroll(false)
             }
         });
 

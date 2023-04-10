@@ -1,17 +1,17 @@
-import { makeShadowBackground, render } from "./utilities.js";
+import { blockScroll, render } from "./utilities.js";
 
 export class AnimalCard {
   constructor(object) {
-    this.name = object.name
-    this.img = object.img
-    this.type = object.type
-    this.breed = object.breed
-    this.description = object.description
-    this.age = object.age
-    this.inoculations = object.inoculations
-    this.diseases = object.diseases
-    this.parasites = object.parasites
-    this.addListener()
+    this.name = object.name;
+    this.img = object.img;
+    this.type = object.type;
+    this.breed = object.breed;
+    this.description = object.description;
+    this.age = object.age;
+    this.inoculations = object.inoculations;
+    this.diseases = object.diseases;
+    this.parasites = object.parasites;
+    this.addListener();
     this.render = render.bind(this);
   }
 
@@ -20,45 +20,46 @@ export class AnimalCard {
               <img src=${this.img} alt="animal-img" width="270" height="270" />
               <h3>${this.name}</h3>
               <button type="button" class="like-button like-button_white">Learn more</button>
-            </li>`
+            </li>`;
   }
 
-  openAndFillPopup() {
-    window.popup.showModal();
-    document.querySelector(".popup").innerHTML = this.renderLongCard();
-    makeShadowBackground(document.querySelector(".popup").open)
+  togglePopup(value) {
+    if (value) {
+      document.querySelector(".popup").classList.add("open");
+      document.querySelector(".popup").innerHTML = this.renderLongCard();
+    } else {
+      document.querySelector(".popup").classList.remove("open");
+      document.querySelector(".popup").innerHTML = "";
+    }
+    blockScroll(value);
   }
 
   addListener() {
-    document.addEventListener('click', (event) => {
-      if (event.target.closest(".friends-card") && event.target.closest(".friends-card").dataset.name == this.name) {
-        this.openAndFillPopup()
-        event.stopImmediatePropagation()
-      }
-
-
-    });
-    document.querySelector(".popup").addEventListener('close', (event) => {
-      console.log('close');
-      makeShadowBackground(false)
-      event.stopImmediatePropagation()
-    });
-
-    document.querySelector(".popup").addEventListener('click', (event) => {
-      if (!event.target.closest(".dialog__wrapper")) {
-        makeShadowBackground(false)
-        window.popup.close()
-        event.stopImmediatePropagation()
+    document.addEventListener("click", (event) => {
+      if (
+        event.target.closest(".friends-card") &&
+        event.target.closest(".friends-card").dataset.name == this.name
+      ) {
+        this.togglePopup(true);
+        event.stopImmediatePropagation();
       }
     });
 
-
-
+    document.querySelector(".popup").addEventListener("click", (event) => {
+      if (
+        !event.target.closest(".dialog__wrapper") ||
+        event.target.closest(".popup-close")
+      ) {
+        this.togglePopup(false);
+        event.stopImmediatePropagation();
+      }
+    });
   }
 
   renderLongCard() {
     return `<div class="dialog__wrapper">
-   <img class="popup-img" src=${this.img} alt="animal-img" width="270" height="270" />
+   <img class="popup-img" src=${this.img
+      } alt="animal-img" width="270" height="270" />
           <div class="popup-content">
             <h2>${this.name}</h2>
             <h3>${this.breed}</h3>
@@ -70,10 +71,9 @@ export class AnimalCard {
               <li><b>Parasites: </b>${this.parasites.join(", ")}</li>
             </ul>
           </div>
-          <button class="popup-close" type="button" onclick="window.popup.close();"><img src="../../assets/icons/cross.png" alt="cross" width="12" height="12" /></button>
+          <button class="popup-close" type="button";"><img src="../../assets/icons/cross.png" alt="cross" width="12" height="12" /></button>
   </div>
           
-        `
-
+        `;
   }
 }
