@@ -7,8 +7,8 @@ export class Pagination {
         this.middleScreenArray = this.hackArray(this.cardsFromData, 8);
         this.smallScreenArray = this.hackArray(this.cardsFromData, 16);
         this.activePageNumber = 1;
-        this.updateActiveData()
-        this.renderPagination()
+        this.updateActiveData();
+        this.renderPagination();
         this.addListener();
     }
 
@@ -39,7 +39,6 @@ export class Pagination {
 
     checkLastPageNumber() {
         return this.activePack && this.activePack.length;
-
     }
 
     updateActiveData() {
@@ -48,11 +47,7 @@ export class Pagination {
     }
 
     renderPageNumber() {
-        render(
-            ".friends-page-number",
-            this.activePageNumber,
-            "replacement"
-        );
+        render(".friends-page-number", this.activePageNumber, "replacement");
     }
 
     renderPaginationContent() {
@@ -66,58 +61,79 @@ export class Pagination {
 
     updateControls() {
         if (this.activePageNumber == 1) {
-            document.querySelector(".friends-pag-button__left_last").disabled = "true;";
+            document.querySelector(".friends-pag-button__left_last").disabled =
+                "true;";
             document.querySelector(".friends-pag-button__left").disabled = "true;";
-            document.querySelector(".friends-pag-button__right_last").removeAttribute("disabled")
-            document.querySelector(".friends-pag-button__right").removeAttribute("disabled")
-        } else if (this.activePack && (this.activePageNumber == this.activePack.length)) {
-            document.querySelector(".friends-pag-button__right_last").disabled = "true;";
+            document
+                .querySelector(".friends-pag-button__right_last")
+                .removeAttribute("disabled");
+            document
+                .querySelector(".friends-pag-button__right")
+                .removeAttribute("disabled");
+        } else if (
+            this.activePack &&
+            this.activePageNumber == this.activePack.length
+        ) {
+            document.querySelector(".friends-pag-button__right_last").disabled =
+                "true;";
             document.querySelector(".friends-pag-button__right").disabled = "true;";
-            document.querySelector(".friends-pag-button__left_last").removeAttribute("disabled")
-            document.querySelector(".friends-pag-button__left").removeAttribute("disabled");
+            document
+                .querySelector(".friends-pag-button__left_last")
+                .removeAttribute("disabled");
+            document
+                .querySelector(".friends-pag-button__left")
+                .removeAttribute("disabled");
         } else {
-            document.querySelector(".friends-pag-button__right_last").removeAttribute("disabled")
-            document.querySelector(".friends-pag-button__right").removeAttribute("disabled")
-            document.querySelector(".friends-pag-button__left_last").removeAttribute("disabled")
-            document.querySelector(".friends-pag-button__left").removeAttribute("disabled");
+            document
+                .querySelector(".friends-pag-button__right_last")
+                .removeAttribute("disabled");
+            document
+                .querySelector(".friends-pag-button__right")
+                .removeAttribute("disabled");
+            document
+                .querySelector(".friends-pag-button__left_last")
+                .removeAttribute("disabled");
+            document
+                .querySelector(".friends-pag-button__left")
+                .removeAttribute("disabled");
         }
     }
 
     renderPagination() {
         this.renderPageNumber();
         this.renderPaginationContent();
-        this.updateControls()
+        this.updateControls();
     }
 
     addListener() {
         document.addEventListener("click", (event) => {
             if (event.target.closest(".friends-pag-button__left_last")) {
                 this.activePageNumber = 1;
-                this.renderPagination()
+                this.renderPagination();
             } else if (event.target.closest(".friends-pag-button__left")) {
                 if (this.activePageNumber > 1) {
                     this.activePageNumber--;
-                    this.renderPagination()
+                    this.renderPagination();
                 }
             } else if (event.target.closest(".friends-pag-button__right")) {
                 if (this.activePageNumber < this.lastPageNumber) {
                     this.activePageNumber++;
-                    this.renderPagination()
+                    this.renderPagination();
                 }
             } else if (event.target.closest(".friends-pag-button__right_last")) {
                 this.activePageNumber = this.lastPageNumber;
-                this.renderPagination()
+                this.renderPagination();
             }
         });
 
         addEventListener("resize", (event) => {
-            this.updateActiveData()
+            this.updateActiveData();
 
             if (this.activePageNumber > this.lastPageNumber) {
                 this.activePageNumber = this.lastPageNumber;
             }
 
-            this.renderPagination()
+            this.renderPagination();
         });
     }
 }

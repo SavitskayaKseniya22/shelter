@@ -1,8 +1,5 @@
-
 import { Corousel } from "../../assets/scripts/Corousel.js";
 import { Header } from "../../assets/scripts/Header.js";
 
-new Header()
-new Corousel()
-
-
+new Header();
+new Corousel();
