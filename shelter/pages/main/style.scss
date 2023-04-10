@@ -474,6 +474,7 @@ a {
   padding-bottom: 30px;
   border-radius: 9px;
   cursor: pointer;
+
   img {
     border-top-left-radius: 9px;
     border-top-right-radius: 9px;
@@ -737,6 +738,9 @@ a {
     border: none;
     padding: 0;
     position: fixed;
+    font-family: $emphasis-font-family;
+    font-style: $main-font-style;
+    color: #000000;
 
     @media (max-width: 1279px) {
       width: 82%;
@@ -744,6 +748,19 @@ a {
 
     @media (max-width: 767px) {
       width: 75%;
+      h2 {
+        font-size: 35px;
+        line-height: 130%;
+      }
+      h3 {
+        font-size: 20px;
+        line-height: 115%;
+        text-align: center;
+      }
+    }
+    h2,
+    h3 {
+      color: #000000;
     }
   }
 
@@ -762,35 +779,60 @@ a {
     flex-direction: column;
     justify-content: space-between;
     align-items: flex-start;
+    gap: 40px;
 
     @media (max-width: 1279px) {
       padding: 10px 10px 37px 10px;
+      gap: 20px;
     }
+
     @media (max-width: 767px) {
       width: 100%;
       padding: 10px;
       align-items: center;
+    }
+    .popup-titles {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      gap: 10px;
+    }
 
-      ul {
-        align-self: flex-start;
-      }
-      h2 {
-        margin-top: 10px;
+    ul {
+      align-self: flex-start;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      @media (max-width: 1929px) {
+        gap: 5px;
       }
     }
 
     li {
-      list-style-type: disc;
       margin-left: 15px;
+      letter-spacing: 0.06em;
+      line-height: 110%;
+      position: relative;
+      ::before {
+        content: url("../../assets/icons/dot.png");
+        position: absolute;
+        width: 4px;
+        height: 4px;
+        left: -12px;
+        top: -4px;
+      }
+      b {
+        letter-spacing: 0.1em;
+      }
     }
     p {
       line-height: 110%;
+      letter-spacing: 0.06em;
       @media (max-width: 1279px) {
         font-size: 13px;
       }
       @media (max-width: 767px) {
-        margin-top: 20px;
-        margin-bottom: 24px;
+        margin-bottom: 4px;
       }
     }
   }
@@ -803,6 +845,10 @@ a {
     border-radius: 50%;
     border: 2px solid #f1cdb3;
     background-color: transparent;
+    @media (max-width: 1279px) {
+      right: -45px;
+      top: -52px;
+    }
 
     @media (max-width: 767px) {
       right: -26px;

@@ -61,8 +61,12 @@ export class AnimalCard {
    <img class="popup-img" src=${this.img
       } alt="animal-img" width="270" height="270" />
           <div class="popup-content">
-            <h2>${this.name}</h2>
+          <div class="popup-titles">
+          <h2>${this.name}</h2>
             <h3>${this.breed}</h3>
+          </div>
+
+            
             <p>${this.description}</p>
             <ul>
               <li><b>Age: </b> ${this.age}</li>

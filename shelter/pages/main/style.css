@@ -717,6 +717,9 @@ a {
   border: none;
   padding: 0;
   position: fixed;
+  font-family: Georgia, "Times New Roman", Times, serif;
+  font-style: normal;
+  color: #000000;
 }
 @media (max-width: 1279px) {
   .open .dialog__wrapper {
@@ -727,6 +730,19 @@ a {
   .open .dialog__wrapper {
     width: 75%;
   }
+  .open .dialog__wrapper h2 {
+    font-size: 35px;
+    line-height: 130%;
+  }
+  .open .dialog__wrapper h3 {
+    font-size: 20px;
+    line-height: 115%;
+    text-align: center;
+  }
+}
+.open .dialog__wrapper h2,
+.open .dialog__wrapper h3 {
+  color: #000000;
 }
 .open .popup-img {
   width: 55.6%;
@@ -745,10 +761,12 @@ a {
   flex-direction: column;
   justify-content: space-between;
   align-items: flex-start;
+  gap: 40px;
 }
 @media (max-width: 1279px) {
   .open .popup-content {
     padding: 10px 10px 37px 10px;
+    gap: 20px;
   }
 }
 @media (max-width: 767px) {
@@ -757,19 +775,44 @@ a {
     padding: 10px;
     align-items: center;
   }
+}
+.open .popup-content .popup-titles {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 10px;
+}
+.open .popup-content ul {
+  align-self: flex-start;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+@media (max-width: 1929px) {
   .open .popup-content ul {
-    align-self: flex-start;
-  }
-  .open .popup-content h2 {
-    margin-top: 10px;
+    gap: 5px;
   }
 }
 .open .popup-content li {
-  list-style-type: disc;
   margin-left: 15px;
+  letter-spacing: 0.06em;
+  line-height: 110%;
+  position: relative;
+}
+.open .popup-content li ::before {
+  content: url("../../assets/icons/dot.png");
+  position: absolute;
+  width: 4px;
+  height: 4px;
+  left: -12px;
+  top: -4px;
+}
+.open .popup-content li b {
+  letter-spacing: 0.1em;
 }
 .open .popup-content p {
   line-height: 110%;
+  letter-spacing: 0.06em;
 }
 @media (max-width: 1279px) {
   .open .popup-content p {
@@ -778,8 +821,7 @@ a {
 }
 @media (max-width: 767px) {
   .open .popup-content p {
-    margin-top: 20px;
-    margin-bottom: 24px;
+    margin-bottom: 4px;
   }
 }
 .open .popup-close {
@@ -791,6 +833,12 @@ a {
   border-radius: 50%;
   border: 2px solid #f1cdb3;
   background-color: transparent;
+}
+@media (max-width: 1279px) {
+  .open .popup-close {
+    right: -45px;
+    top: -52px;
+  }
 }
 @media (max-width: 767px) {
   .open .popup-close {
