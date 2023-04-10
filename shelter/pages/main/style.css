@@ -183,7 +183,6 @@ a {
 }
 .header-nav__links a.header-nav__links-active {
   border-bottom: 3px solid #f1cdb3;
-  pointer-events: none;
 }
 .header-nav__links a:hover {
   border-bottom: 3px solid #f1cdb3;
