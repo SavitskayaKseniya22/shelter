@@ -6,25 +6,25 @@ export class Pagination {
         this.bigScreenArray = this.hackArray(this.cardsFromData, 6);
         this.middleScreenArray = this.hackArray(this.cardsFromData, 8);
         this.smallScreenArray = this.hackArray(this.cardsFromData, 16);
-        this.activePack = this.checkActivePack();
-        this.activePageNumber = 8;
-        this.lastPageNumber = this.checkLastPageNumber();
-        this.renderPageNumber();
-        this.renderPaginationContent();
-        this.blockButtons();
+        this.activePageNumber = 1;
+        this.updateActiveData()
+        this.renderPagination()
         this.addListener();
     }
 
     makePaginationContent(array) {
         return array && array.map((element) => element.renderShortCard()).join("");
     }
-
-    renderPageNumber() {
-        render(
-            ".friends-page-number",
-            this.activePageNumber + "/" + this.lastPageNumber,
-            "replacement"
-        );
+    hackArray(array, numOfArray) {
+        let arrayToCut = array.slice();
+        let chunkLength = Math.floor(arrayToCut.length / numOfArray);
+        const result = [];
+        while (arrayToCut.length > 0) {
+            const chunk = arrayToCut.splice(0, chunkLength);
+            shuffle(chunk);
+            result.push(chunk);
+        }
+        return result;
     }
 
     checkActivePack() {
@@ -38,32 +38,25 @@ export class Pagination {
     }
 
     checkLastPageNumber() {
-        if (this.activePack && this.activePack.length) {
-            return this.activePack.length;
-        }
+        return this.activePack && this.activePack.length;
+
     }
 
-    hackArray(array, numOfArray) {
-        let arrayToCut = array.slice();
-        let chunkLength = Math.floor(arrayToCut.length / numOfArray);
-        const result = [];
-        while (arrayToCut.length > 0) {
-            const chunk = arrayToCut.splice(0, chunkLength);
-            //console.log(chunk)
-            shuffle(chunk);
-            //console.log(chunk)
-            result.push(chunk);
-        }
-        //console.log(result);
-        return result;
+    updateActiveData() {
+        this.activePack = this.checkActivePack();
+        this.lastPageNumber = this.checkLastPageNumber();
+    }
+
+    renderPageNumber() {
+        render(
+            ".friends-page-number",
+            this.activePageNumber,
+            "replacement"
+        );
     }
 
     renderPaginationContent() {
         let content = this.activePack && this.activePack[this.activePageNumber - 1];
-        //console.log(content);
-        //console.log(this.activePageNumber);
-        // console.log(this.activePageNumber - 1);
-
         render(
             ".friends-list-pagination",
             this.makePaginationContent(content),
@@ -71,61 +64,60 @@ export class Pagination {
         );
     }
 
-    blockButtons() {
+    updateControls() {
         if (this.activePageNumber == 1) {
-            document.querySelector(".friends-pag-button__left_last").disabled =
-                "true;";
+            document.querySelector(".friends-pag-button__left_last").disabled = "true;";
             document.querySelector(".friends-pag-button__left").disabled = "true;";
             document.querySelector(".friends-pag-button__right_last").removeAttribute("disabled")
             document.querySelector(".friends-pag-button__right").removeAttribute("disabled")
-        } else if (this.activePageNumber == this.activePack.length) {
-            document.querySelector(".friends-pag-button__right_last").disabled =
-                "true;";
+        } else if (this.activePack && (this.activePageNumber == this.activePack.length)) {
+            document.querySelector(".friends-pag-button__right_last").disabled = "true;";
             document.querySelector(".friends-pag-button__right").disabled = "true;";
+            document.querySelector(".friends-pag-button__left_last").removeAttribute("disabled")
+            document.querySelector(".friends-pag-button__left").removeAttribute("disabled");
+        } else {
+            document.querySelector(".friends-pag-button__right_last").removeAttribute("disabled")
+            document.querySelector(".friends-pag-button__right").removeAttribute("disabled")
             document.querySelector(".friends-pag-button__left_last").removeAttribute("disabled")
             document.querySelector(".friends-pag-button__left").removeAttribute("disabled");
         }
     }
 
+    renderPagination() {
+        this.renderPageNumber();
+        this.renderPaginationContent();
+        this.updateControls()
+    }
+
     addListener() {
         document.addEventListener("click", (event) => {
             if (event.target.closest(".friends-pag-button__left_last")) {
-                console.log(".friends-pag-button__left_last");
-
                 this.activePageNumber = 1;
-                this.renderPageNumber();
-                this.renderPaginationContent();
-                this.blockButtons()
-
-
-
-
+                this.renderPagination()
             } else if (event.target.closest(".friends-pag-button__left")) {
-                console.log(".friends-pag-button__left");
+                if (this.activePageNumber > 1) {
+                    this.activePageNumber--;
+                    this.renderPagination()
+                }
             } else if (event.target.closest(".friends-pag-button__right")) {
-                console.log(".friends-pag-button__right");
+                if (this.activePageNumber < this.lastPageNumber) {
+                    this.activePageNumber++;
+                    this.renderPagination()
+                }
             } else if (event.target.closest(".friends-pag-button__right_last")) {
-                console.log(".friends-pag-button__right_last");
-
                 this.activePageNumber = this.lastPageNumber;
-                this.renderPageNumber();
-                this.renderPaginationContent();
-                this.blockButtons()
-
-
+                this.renderPagination()
             }
         });
 
         addEventListener("resize", (event) => {
-            this.activePack = this.checkActivePack();
-            this.lastPageNumber = this.checkLastPageNumber();
+            this.updateActiveData()
 
             if (this.activePageNumber > this.lastPageNumber) {
                 this.activePageNumber = this.lastPageNumber;
             }
 
-            this.renderPageNumber();
-            this.renderPaginationContent();
+            this.renderPagination()
         });
     }
 }

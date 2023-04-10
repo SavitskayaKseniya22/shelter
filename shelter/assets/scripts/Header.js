@@ -34,12 +34,3 @@ export class Header {
 
 
 }
-/*
-addEventListener("resize", (event) => {
-    if (document.getElementById("burger-icon").checked && window.innerWidth > 767 && document.body.style.overflow == 'hidden') {
-        //console.log(document.getElementById("burger-icon").checked, window.innerWidth, true)
-        makeShadowBackground(false)
-    } else if (document.getElementById("burger-icon").checked && window.innerWidth < 767 && document.body.style.overflow != 'hidden') {
-        makeShadowBackground(true)
-    }
-});*/
