@@ -21,9 +21,25 @@ export class Header {
             makeShadowBackground(e.target.checked)
         });
 
+        addEventListener("resize", (event) => {
+            if (document.getElementById("burger-icon").checked && window.innerWidth > 767 && document.body.style.overflow == 'hidden') {
+                toggleCheckbox(document.getElementById("burger-icon"), false);
+                makeShadowBackground(false)
+            }
+        });
+
 
     }
 
 
 
 }
+/*
+addEventListener("resize", (event) => {
+    if (document.getElementById("burger-icon").checked && window.innerWidth > 767 && document.body.style.overflow == 'hidden') {
+        //console.log(document.getElementById("burger-icon").checked, window.innerWidth, true)
+        makeShadowBackground(false)
+    } else if (document.getElementById("burger-icon").checked && window.innerWidth < 767 && document.body.style.overflow != 'hidden') {
+        makeShadowBackground(true)
+    }
+});*/

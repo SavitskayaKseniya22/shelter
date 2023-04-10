@@ -5,6 +5,7 @@
 
 html {
   scroll-behavior: smooth;
+  scrollbar-gutter: stable;
 }
 
 body {
@@ -14,6 +15,7 @@ body {
   line-height: 160%;
   color: #4c4c4c;
   position: relative;
+  scrollbar-gutter: stable;
 }
 
 ul,
@@ -227,7 +229,7 @@ a {
     display: block;
     cursor: pointer;
     transform: rotate(0);
-    transition-duration: 2s;
+    transition: transform 2s;
     width: 32px;
     height: 22px;
     background: linear-gradient(#f1cdb3 10%, transparent 10% 45%, #f1cdb3 45% 55%, transparent 55% 90%, #f1cdb3 90%);
@@ -245,6 +247,8 @@ a {
   }
   #burger-icon:checked ~ .header-nav__links-wrapper .header-nav__burger {
     transform: rotate(90deg);
+    transition: transform 2s;
+    opacity: 1;
   }
   #burger-icon:checked ~ .header-nav__links-wrapper::before {
     content: "";
@@ -263,6 +267,7 @@ a {
     z-index: 1000;
     top: 45px;
     right: 20px;
+    opacity: 0;
   }
 }
 .header-nav__logo {

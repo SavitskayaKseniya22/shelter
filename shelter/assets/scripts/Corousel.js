@@ -1,4 +1,3 @@
-
 import { shuffle, makeAnimalCardsList, render, checkOffset } from "./utilities.js";
 
 export class Corousel {
@@ -20,12 +19,9 @@ export class Corousel {
 
     }
 
-
-
     makeContentFromCard(cards) {
         return cards.map((element) => element.renderShortCard()).join("");
     }
-
 
     makeAnotherPart() {
         let filteredCards = this.cardsFromData.filter((card) => {
@@ -50,7 +46,6 @@ export class Corousel {
                 this.nextCards = this.makeAnotherPart();
                 this.nextContent = this.makeContentFromCard(this.nextCards);
                 render(".friends-list__next", this.nextContent, "replacement")
-
 
                 this.buffer = this.activeContent;
 
@@ -90,8 +85,6 @@ export class Corousel {
                 }, "1000");
 
                 this.activeCards = this.previousCards;
-
-
             }
 
 
