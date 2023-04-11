@@ -846,6 +846,13 @@ a {
     border-radius: 50%;
     border: 2px solid #f1cdb3;
     background-color: transparent;
+    transition: background-color 1s;
+
+    &:hover {
+      background-color: #fddcc4;
+      border: 2px solid #fddcc4;
+      transition: background-color 1s;
+    }
     @media (max-width: 1279px) {
       right: -45px;
       top: -52px;
@@ -854,10 +861,6 @@ a {
     @media (max-width: 767px) {
       right: -26px;
       transition: 0.5s;
-      &:hover {
-        background-color: #fddcc4;
-        border: 2px solid #fddcc4;
-      }
     }
   }
 }
