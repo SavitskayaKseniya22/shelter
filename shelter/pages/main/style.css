@@ -850,6 +850,5 @@ a {
 @media (max-width: 767px) {
   .open .popup-close {
     right: -26px;
-    transition: 0.5s;
   }
 }/*# sourceMappingURL=style.css.map */
