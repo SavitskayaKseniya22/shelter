@@ -8,8 +8,10 @@ export class Header {
     addListener() {
         document.addEventListener("click", (event) => {
             if (
-                event.target.tagName == "A" &&
-                event.target.closest(".header-nav__links")
+                (event.target.tagName == "A" &&
+                    event.target.closest(".header-nav__links")) ||
+                (!event.target.closest(".header-nav__links") &&
+                    event.target.classList.contains("header-nav__links-wrapper"))
             ) {
                 toggleCheckbox(document.getElementById("burger-icon"), false);
                 blockScroll(false);
