@@ -127,4 +127,11 @@ h1 {
 .friends-carousel .friends-pag-button__left_last img,
 .friends-carousel .friends-pag-button__left img {
   transform: rotate(180deg);
+}
+
+.friends-pag-button__left_last[disabled] img,
+.friends-pag-button__left[disabled] img,
+.friends-pag-button__right_last[disabled] img,
+.friends-pag-button__right[disabled] img {
+  opacity: 0.5;
 }/*# sourceMappingURL=style.css.map */

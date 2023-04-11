@@ -116,3 +116,11 @@ h1 {
     transform: rotate(180deg);
   }
 }
+.friends-pag-button__left_last,
+.friends-pag-button__left,
+.friends-pag-button__right_last,
+.friends-pag-button__right {
+  &[disabled] img {
+    opacity: 0.5;
+  }
+}

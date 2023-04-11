@@ -30,9 +30,9 @@ export class Pagination {
     checkActivePack() {
         if (window.innerWidth > 1279) {
             return this.bigScreenArray;
-        } else if (window.innerWidth < 1279 && window.innerWidth > 767) {
+        } else if (window.innerWidth <= 1279 && window.innerWidth > 767) {
             return this.middleScreenArray;
-        } else if (window.innerWidth < 767) {
+        } else if (window.innerWidth <= 767) {
             return this.smallScreenArray;
         }
     }
