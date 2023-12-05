@@ -1,111 +1,3 @@
-@import url("https://fonts.cdnfonts.com/css/georgia");
-
-$emphasis-font-family: Georgia, "Times New Roman", Times, serif;
-$main-font-family: Arial, Helvetica, sans-serif;
-$main-font-style: normal;
-$main-font-weight: 400;
-$emphasis-letter-spacing: 0.06em;
-$emphasis-color: #f1cdb3;
-$emphasis-hover-color: #fddcc4;
-$background-color: #f6f6f6;
-
-* {
-  box-sizing: border-box;
-}
-
-html {
-  scroll-behavior: smooth;
-  scrollbar-gutter: stable;
-}
-
-body {
-  font-family: $main-font-family;
-  font-weight: $main-font-weight;
-  font-size: 15px;
-  line-height: 160%;
-  color: #4c4c4c;
-  position: relative;
-  scrollbar-gutter: stable;
-}
-
-ul,
-p,
-h1,
-h2,
-h3,
-h4 {
-  margin: 0;
-  padding: 0;
-}
-h1,
-h2,
-h3,
-h4 {
-  color: #545454;
-}
-
-a,
-button {
-  cursor: pointer;
-  color: #292929;
-}
-
-h1,
-h2,
-h3,
-h4,
-a,
-button {
-  font-family: $emphasis-font-family;
-  font-style: $main-font-style;
-  font-weight: $main-font-weight;
-  letter-spacing: $emphasis-letter-spacing;
-}
-
-h1 {
-  font-size: 44px;
-  line-height: 130%;
-  letter-spacing: 0;
-
-  @media (max-width: 767px) {
-    font-size: 25px;
-    line-height: 130%;
-    letter-spacing: 0.06em;
-  }
-}
-
-h2 {
-  font-size: 35px;
-  line-height: 130%;
-
-  @media (max-width: 767px) {
-    font-size: 25px;
-    align-self: center;
-    text-align: center;
-  }
-}
-
-h3 {
-  font-size: 20px;
-  line-height: 115%;
-  @media (max-width: 767px) {
-    font-size: 15px;
-    line-height: 110%;
-  }
-}
-
-h4 {
-  line-height: 110%;
-}
-
-li {
-  list-style-type: none;
-}
-
-a {
-  text-decoration: none;
-}
-
 .like-button {
   display: block;
   padding: 15px 45px;
@@ -146,7 +38,7 @@ a {
 }
 
 .first-screen {
-  background: url("../../assets/images/start-screen-gradient-background.png")
+  background: url('../../assets/images/start-screen-gradient-background.png')
     no-repeat top left;
   background-size: cover;
 
@@ -156,160 +48,6 @@ a {
   justify-content: space-between;
 
   h1 {
-    color: #ffffff;
-  }
-}
-
-.header {
-  .container {
-    padding: 30px 40px;
-    justify-content: space-between;
-    align-items: center;
-
-    @media (max-width: 1279px) {
-      padding: 30px 30px;
-    }
-
-    @media (max-width: 767px) {
-      padding: 30px 20px;
-    }
-  }
-}
-
-.header-nav__links {
-  width: 100%;
-  height: 100%;
-  display: flex;
-  gap: 35px;
-  align-items: center;
-  white-space: nowrap;
-
-  a {
-    font-family: $main-font-family;
-    letter-spacing: 0;
-    border-bottom: none;
-    transition: border-bottom 0.5s;
-    color: #fafafa;
-
-    &.header-nav__links-active {
-      border-bottom: 3px solid #f1cdb3;
-    }
-
-    &:hover {
-      border-bottom: 3px solid #f1cdb3;
-    }
-  }
-
-  @media (max-width: 767px) {
-    flex-direction: column;
-    gap: 40px;
-    justify-content: center;
-    font-size: 32px;
-    line-height: 160%;
-    position: relative;
-    right: 0;
-    transition: 1s;
-  }
-}
-
-//бургер
-
-.header-nav__burger {
-  display: none;
-}
-
-#burger-icon {
-  display: none;
-}
-
-@media (max-width: 767px) {
-  .header-nav__links-wrapper {
-    position: absolute;
-    width: 320px;
-    top: 0;
-    right: 0;
-    height: 100vh;
-    background-color: #292929;
-    display: flex;
-    justify-content: center;
-    opacity: 1;
-    transition-duration: 1s;
-    a {
-      color: #cdcdcd;
-    }
-  }
-  .header-nav__burger {
-    display: block;
-    cursor: pointer;
-    transform: rotate(0);
-    transition: transform 2s;
-    width: 32px;
-    height: 22px;
-    background: linear-gradient(
-      #f1cdb3 10%,
-      transparent 10% 45%,
-      #f1cdb3 45% 55%,
-      transparent 55% 90%,
-      #f1cdb3 90%
-    );
-  }
-
-  #burger-icon:not(:checked) ~ .header-nav__links-wrapper {
-    width: 0;
-    opacity: 0;
-    right: 0px;
-
-    .header-nav__links a {
-      display: none;
-    }
-  }
-
-  #burger-icon:checked ~ .header-nav__links-wrapper {
-    z-index: 11111;
-    .header-nav__burger {
-      transform: rotate(90deg);
-      transition: transform 2s;
-      opacity: 1;
-    }
-    &::before {
-      content: "";
-      width: 100vw;
-      height: 100vh;
-      position: fixed;
-      background-color: rgba(0, 0, 0, 0.5);
-      top: 0;
-      left: 0;
-    }
-  }
-
-  #burger-icon:checked + .header-nav__burger {
-    transform: rotate(90deg);
-  }
-
-  .header-nav__burger-close {
-    position: absolute;
-    z-index: 1000;
-    top: 45px;
-    right: 20px;
-    opacity: 0;
-  }
-}
-
-.header-nav__logo {
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-  align-items: center;
-
-  a {
-    font-size: 32px;
-    line-height: 110%;
-    color: $emphasis-color;
-  }
-  p {
-    font-size: 13px;
-    line-height: 115%;
-    letter-spacing: 0.1em;
     color: #ffffff;
   }
 }
@@ -326,14 +64,14 @@ a {
     padding: 223px 775px 243px 40px;
     align-items: flex-start;
     flex-direction: column;
-    background: url("../../assets/images/start-screen-puppy.png") right 40px
+    background: url('../../assets/images/start-screen-puppy.png') right 40px
       bottom no-repeat;
     flex-grow: 1;
     color: #cdcdcd;
 
     @media (max-width: 1279px) {
       padding: 30px 155px 693px 155px;
-      background: url("../../assets/images/start-screen-puppy.png") right 30px
+      background: url('../../assets/images/start-screen-puppy.png') right 30px
         bottom no-repeat;
       background-size: 75%;
     }
@@ -342,7 +80,7 @@ a {
       padding: 30px 10px 377px 10px;
       align-items: center;
       text-align: center;
-      background: url("../../assets/images/start-screen-puppy.png") right 10px
+      background: url('../../assets/images/start-screen-puppy.png') right 10px
         bottom no-repeat;
       background-size: 80%;
     }
@@ -364,18 +102,18 @@ a {
 .about {
   .container {
     padding: 94px 215px 114px 635px;
-    background: url("../../assets/images/about-pets.png") left 220px bottom
+    background: url('../../assets/images/about-pets.png') left 220px bottom
       100px no-repeat;
     justify-content: right;
 
     @media (max-width: 1279px) {
       padding: 80px 169px 588px 169px;
-      background: url("../../assets/images/about-pets.png") left 234px bottom
+      background: url('../../assets/images/about-pets.png') left 234px bottom
         100px no-repeat;
     }
     @media (max-width: 767px) {
       padding: 42px 25px 438px 25px;
-      background: url("../../assets/images/about-pets.png") left 28px bottom
+      background: url('../../assets/images/about-pets.png') left 28px bottom
         42.4px no-repeat;
       background-size: 80%;
     }
@@ -572,17 +310,17 @@ a {
 
   .container {
     padding: 80px 182px 100px 718px;
-    background: url("../../assets/images/donation-dog.png") left 183px bottom
+    background: url('../../assets/images/donation-dog.png') left 183px bottom
       110px no-repeat;
     @media (max-width: 1279px) {
       padding: 80px 194px 421px 194px;
-      background: url("../../assets/images/donation-dog.png") left 132px bottom
+      background: url('../../assets/images/donation-dog.png') left 132px bottom
         100px no-repeat;
     }
 
     @media (max-width: 767px) {
       padding: 42px 10px 219px 10px;
-      background: url("../../assets/images/donation-dog.png") left 32px bottom
+      background: url('../../assets/images/donation-dog.png') left 32px bottom
         40px no-repeat;
       background-size: 80%;
     }
@@ -618,12 +356,12 @@ a {
     border-radius: 9px;
     width: 350px;
     white-space: nowrap;
-    background: $emphasis-color url("../../assets/icons/credit-card.svg") left
+    background: $emphasis-color url('../../assets/icons/credit-card.svg') left
       15px bottom 10px no-repeat;
 
     &:hover {
       background: $emphasis-hover-color
-        url("../../assets/icons/credit-card.svg") left 15px bottom 10px
+        url('../../assets/icons/credit-card.svg') left 15px bottom 10px
         no-repeat;
     }
 
@@ -636,88 +374,12 @@ a {
   }
 }
 
-.footer {
-  background: url("../../assets/images/start-screen-gradient-background.png")
-    no-repeat;
-  background-size: cover;
-
-  .footer-email {
-    background: url("../../assets/icons/icon-email.svg") center left no-repeat;
-  }
-  .footer-tel {
-    background: url("../../assets/icons/icon-phone.svg") center left no-repeat;
-  }
-  .footer-mail {
-    background: url("../../assets/icons/icon-marker.png") center left no-repeat;
-  }
-
-  h2 {
-    color: white;
-  }
-
-  .container {
-    padding: 56px 40px;
-    background: url("../../assets/images/footer-puppy.png") top 40px right 40px
-      no-repeat;
-    gap: 160px;
-    @media (max-width: 1279px) {
-      padding: 30px 30px 375px 30px;
-      background: url("../../assets/images/footer-puppy.png") bottom right 234px
-        no-repeat;
-      gap: 60px;
-      justify-content: center;
-    }
-
-    @media (max-width: 767px) {
-      flex-direction: column;
-      align-items: center;
-      padding: 30px 10px 309px 10px;
-      background: url("../../assets/images/footer-puppy.png") bottom right 30px
-        no-repeat;
-      background-size: 80%;
-      gap: 40px;
-      justify-content: center;
-    }
-  }
-
-  section {
-    display: flex;
-    flex-direction: column;
-    gap: 40px;
-    align-items: center;
-
-    a {
-      min-height: 32px;
-      padding-left: 60px;
-      font-size: 20px;
-      color: $emphasis-color;
-      line-height: 32px;
-    }
-  }
-  .contacts {
-    align-items: flex-start;
-  }
-
-  .address {
-    gap: 32px;
-    align-items: normal;
-    a {
-      padding-left: 42px;
-      line-height: 115%;
-    }
-
-    @media (max-width: 767px) {
-      gap: 40px;
-    }
-  }
-}
-
 .open {
   width: 100vw;
   height: 100vh;
 
   &::before {
-    content: "";
+    content: '';
     width: 100vw;
     height: 100vh;
     position: fixed;
@@ -815,7 +477,7 @@ a {
       line-height: 110%;
       position: relative;
       ::before {
-        content: url("../../assets/icons/dot.png");
+        content: url('../../assets/icons/dot.png');
         position: absolute;
         width: 4px;
         height: 4px;
@@ -837,6 +499,7 @@ a {
       }
     }
   }
+
   .popup-close {
     position: absolute;
     right: -37px;
