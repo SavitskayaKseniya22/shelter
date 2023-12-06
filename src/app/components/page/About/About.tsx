@@ -4,20 +4,17 @@ import styles from './about.module.scss';
 
 function About() {
   return (
-    <section className={styles.about}>
+    <section>
       <div className={`${styles.container} container`}>
         <Image
+          className={styles.image}
           src="/images/about-pets.png"
-          fill
-          alt="Picture of the author"
-          style={{
-            objectFit: 'contain',
-            inset: 'unset',
-            bottom: '1rem',
-          }}
+          alt="Dog"
+          width={300}
+          height={408}
         />
 
-        <div className={styles['about-content']}>
+        <div className={styles.content}>
           <h2>
             About the shelter
             <br />
