@@ -1,12 +1,12 @@
 import React, { ReactNode } from 'react';
 import styles from './button.module.scss';
 
-enum ButtonColorType {
+export enum ButtonColorType {
   COLORED = 'colored',
   WHITE = 'white',
 }
 
-enum ButtonContentType {
+export enum ButtonContentType {
   STRING = 'string',
   SYMBOL = 'symbol',
 }

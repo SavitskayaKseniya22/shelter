@@ -1,27 +1,45 @@
 @import '../../../variables.module.scss';
 
-.addition {
+.donation {
   background: $background-color;
+}
 
-  .container {
-    padding: 80px 182px 100px 718px;
+.container {
+  padding: 80px 180px 100px 180px;
+  gap: 30px;
+  align-items: center;
 
-    @media (max-width: 1279px) {
-      padding: 80px 194px 421px 194px;
-    }
+  @media (max-width: 1279px) {
+    flex-direction: column;
+    padding: 80px 132px 100px 80px;
+  }
 
-    @media (max-width: 767px) {
-      padding: 42px 10px 219px 10px;
-    }
+  @media (max-width: 767px) {
+    padding: 42px 20px;
   }
 }
 
-.addition-content {
+.image {
+  width: 505px;
+  height: 261px;
+
+  @media (max-width: 767px) {
+    width: 260px;
+    height: 135px;
+  }
+}
+
+.content {
   display: flex;
   flex-direction: column;
   gap: 20px;
   justify-content: space-between;
-  padding: 0 10px;
+  max-width: 380px;
+
+  @media (max-width: 1279px) {
+    order: -1;
+  }
+
   @media (max-width: 767px) {
     gap: 23px;
   }
@@ -31,23 +49,22 @@
     line-height: 150%;
     color: #b2b2b2;
   }
+
   h4 {
     @media (max-width: 767px) {
       letter-spacing: 0.01em;
     }
   }
 
-  .like-button {
-    padding: 10px 15px 10px 60px;
+  button {
     font-size: 20px;
-    align-self: center;
-    line-height: 115%;
+    gap: 15px;
     border-radius: 9px;
     width: 350px;
     white-space: nowrap;
+    line-height: 115%;
 
     @media (max-width: 767px) {
-      padding: 13px 15px 13px 60px;
       width: 100%;
       font-size: 15px;
       line-height: 110%;

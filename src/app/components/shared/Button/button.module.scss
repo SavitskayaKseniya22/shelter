@@ -1,7 +1,13 @@
+@import '../../../variables.module.scss';
+
 .button {
   padding: 15px;
   color: black;
   border-radius: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 17px;
 
   &.string {
     padding: 15px 45px;
@@ -19,10 +25,7 @@
 
 /*
 .like-button {
-  display: block;
-  padding: 15px 45px;
-  border-radius: 100px;
-  background: $emphasis-color;
+  
   transition: background 0.5s;
   font-size: 17px;
   line-height: 130%;
@@ -34,8 +37,7 @@
 
 
 .like-button_white {
-  background: transparent;
-  border: 2px solid $emphasis-color;
+  
   transition: background 0.5s, border 0.5s;
 
   &:hover {
