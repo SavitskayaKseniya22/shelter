@@ -4,7 +4,7 @@
 
 import React from 'react';
 import Link from 'next/link';
-import styles from '../layout.module.scss';
+import styles from './header.module.scss';
 
 export function Logo() {
   return (

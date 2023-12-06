@@ -1,0 +1,77 @@
+@import '../../../variables.module.scss';
+
+.footer {
+  position: relative;
+
+  h2 {
+    color: white;
+  }
+
+  img {
+    z-index: -2;
+  }
+
+  .container {
+    padding: 56px 40px;
+    gap: 160px;
+    position: relative;
+
+    @media (max-width: 1279px) {
+      padding: 30px 30px 375px 30px;
+      gap: 60px;
+      justify-content: center;
+    }
+
+    @media (max-width: 767px) {
+      flex-direction: column;
+      align-items: center;
+      padding: 30px 10px 309px 10px;
+      gap: 40px;
+      justify-content: center;
+    }
+
+    img {
+      z-index: -1;
+    }
+  }
+
+  section {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    flex-grow: 2;
+    max-width: 300px;
+    padding: 0.5rem;
+
+    @media (max-width: 767px) {
+      align-items: center;
+    }
+
+    a {
+      min-height: 32px;
+      font-size: 20px;
+      color: $emphasis-color;
+      line-height: 32px;
+      display: flex;
+      justify-content: flex-start;
+      align-items: center;
+      gap: 1rem;
+    }
+
+    &.contacts {
+      gap: 40px;
+    }
+
+    &.address {
+      gap: 32px;
+
+      a {
+        line-height: 115%;
+      }
+
+      @media (max-width: 767px) {
+        gap: 40px;
+      }
+    }
+  }
+}

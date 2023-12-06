@@ -1,0 +1,29 @@
+.about {
+  .container {
+    position: relative;
+    padding: 94px 215px 114px 635px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5rem;
+
+    @media (max-width: 1279px) {
+      padding: 80px 169px 588px 169px;
+      flex-direction: column;
+    }
+
+    @media (max-width: 767px) {
+      padding: 42px 25px 438px 25px;
+    }
+  }
+
+  .about-content {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+
+    @media (max-width: 767px) {
+      gap: 22px;
+    }
+  }
+}

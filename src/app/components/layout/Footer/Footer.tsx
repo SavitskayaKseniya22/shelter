@@ -3,7 +3,7 @@
 import React from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
-import styles from '../layout.module.scss';
+import styles from './footer.module.scss';
 
 function Footer() {
   return (
@@ -26,10 +26,7 @@ function Footer() {
           fill
         />
         <section className={styles.contacts}>
-          <h2>
-            For questions <br />
-            and suggestions
-          </h2>
+          <h2>For questions and suggestions</h2>
           <Link href="mailto:email@shelter.com">
             <Image
               src="/icons/icon-email.svg"
@@ -52,10 +49,7 @@ function Footer() {
         </section>
 
         <section className={styles.address}>
-          <h2>
-            We are waiting <br />
-            for your visit
-          </h2>
+          <h2>We are waiting for your visit</h2>
 
           <Link href="https://goo.gl/maps/EDAPioWz4G93bjD1A" target="_blank">
             <Image
@@ -64,8 +58,7 @@ function Footer() {
               height={32}
               alt="Picture of the author"
             />
-            1 Central Street, Boston <br />
-            (entrance from the store)
+            1 Central Street, Boston (entrance from the store)
           </Link>
 
           <Link href="https://goo.gl/maps/JMV9z4e7cCeDLoC86" target="_blank">
