@@ -2,13 +2,14 @@
 
 .footer {
   position: relative;
+  z-index: -2;
 
   h2 {
     color: white;
   }
 
   img {
-    z-index: -2;
+    z-index: -5;
   }
 
   .container {

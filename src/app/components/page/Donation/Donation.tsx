@@ -1,3 +1,5 @@
+'use client';
+
 import React from 'react';
 import Image from 'next/image';
 import styles from './donation.module.scss';
@@ -27,6 +29,7 @@ function Donation() {
           <Button
             colorType={ButtonColorType.COLORED}
             contentType={ButtonContentType.SYMBOL}
+            onClick={() => {}}
           >
             <Image
               width={20}

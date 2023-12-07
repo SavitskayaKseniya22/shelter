@@ -1,8 +1,25 @@
-import React from 'react';
+'use client';
+
+import React, { useState } from 'react';
 import Image from 'next/image';
+import { useRouter } from 'next/navigation';
 import styles from './friends.module.scss';
+import json from '../../../../../public/json/pets.json';
+import Button, {
+  ButtonColorType,
+  ButtonContentType,
+} from '../../shared/Button/Button';
+import AnimalCard, {
+  AnimalCartType,
+  AnimalType,
+} from '../../shared/AnimalCard/AnimalCard';
 
 function Friends() {
+  const [data] = useState<AnimalType[]>(json);
+  console.log(data);
+
+  const router = useRouter();
+
   return (
     <section className={styles.friends} id="friends">
       <div className={`${styles.container} container`}>
@@ -10,6 +27,13 @@ function Friends() {
           Our friends who <br />
           are looking for a house
         </h2>
+        {data.map((animal) => (
+          <AnimalCard
+            animal={animal}
+            key={animal.description}
+            type={AnimalCartType.SHORT}
+          />
+        ))}
         <div className={styles['friends-carousel']}>
           <button
             type="button"
@@ -21,7 +45,6 @@ function Friends() {
               src="/icons/icon-arrow-left.svg"
               alt="arrow left"
             />
-            left
           </button>
           <div className={styles['friends-list']}>
             <ul className={styles['friends-list__previous']} />
@@ -41,9 +64,13 @@ function Friends() {
           </button>
         </div>
 
-        <a href="../../pages/pets/index.html" className={styles['like-button']}>
+        <Button
+          colorType={ButtonColorType.COLORED}
+          contentType={ButtonContentType.STRING}
+          onClick={() => router.push('/pets')}
+        >
           Get to know the rest
-        </a>
+        </Button>
       </div>
     </section>
   );

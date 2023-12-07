@@ -1,0 +1,134 @@
+@import '../../../variables.module.scss';
+
+.card {
+  flex-direction: column;
+  justify-content: space-between;
+  width: 270px;
+  height: 435px;
+  display: flex;
+  align-items: center;
+  background: #fafafa;
+  padding-bottom: 30px;
+  border-radius: 9px;
+  cursor: pointer;
+
+  .image {
+    border-top-left-radius: 9px;
+    border-top-right-radius: 9px;
+  }
+
+  &:hover {
+    background: white;
+
+    .like-button_white {
+      background: $emphasis-hover-color;
+      border: 2px solid $emphasis-hover-color;
+    }
+  }
+}
+
+.card-detailed {
+  display: flex;
+  justify-content: space-between;
+  background-color: white;
+  border-radius: 9px;
+  font-family: $emphasis-font-family;
+  font-style: $main-font-style;
+  color: #000000;
+
+  h2,
+  h3 {
+    color: #000000;
+  }
+
+  .image {
+    width: 55.6%;
+    height: auto;
+    border-radius: 9px;
+
+    @media (max-width: 767px) {
+      display: none;
+    }
+  }
+
+  @media (max-width: 767px) {
+    h2 {
+      font-size: 35px;
+      line-height: 130%;
+    }
+    h3 {
+      font-size: 20px;
+      line-height: 115%;
+      text-align: center;
+    }
+  }
+
+  .content {
+    width: 44.4%;
+    padding: 50px 20px 88px 29px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 40px;
+
+    @media (max-width: 1279px) {
+      padding: 10px 10px 37px 10px;
+      gap: 20px;
+    }
+
+    @media (max-width: 767px) {
+      width: 100%;
+      padding: 10px;
+      align-items: center;
+    }
+
+    .titles {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      gap: 10px;
+    }
+
+    ul {
+      align-self: flex-start;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      @media (max-width: 1929px) {
+        gap: 5px;
+      }
+    }
+
+    li {
+      margin-left: 15px;
+      letter-spacing: 0.06em;
+      line-height: 110%;
+      position: relative;
+
+      ::before {
+        content: url('/icons/icon-dot.svg');
+        position: absolute;
+        width: 4px;
+        height: 4px;
+        left: -12px;
+        top: -4px;
+      }
+
+      b {
+        letter-spacing: 0.1em;
+      }
+    }
+
+    p {
+      line-height: 110%;
+      letter-spacing: 0.06em;
+      @media (max-width: 1279px) {
+        font-size: 13px;
+      }
+      @media (max-width: 767px) {
+        margin-bottom: 4px;
+      }
+    }
+  }
+}
