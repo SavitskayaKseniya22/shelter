@@ -16,14 +16,17 @@ function Button({
   colorType,
   contentType,
   onClick,
+  disabled,
 }: {
   children: ReactNode;
   colorType: ButtonColorType;
   contentType: ButtonContentType;
   onClick: () => void;
+  disabled?: boolean;
 }) {
   return (
     <button
+      disabled={disabled}
       type="button"
       className={`${styles.button} ${styles[colorType]} ${styles[contentType]}`}
       onClick={onClick}
@@ -32,5 +35,9 @@ function Button({
     </button>
   );
 }
+
+Button.defaultProps = {
+  disabled: false,
+};
 
 export default Button;

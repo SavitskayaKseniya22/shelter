@@ -34,7 +34,7 @@ function AnimalCard({
 
   if (type === AnimalCartType.SHORT) {
     return (
-      <li className={styles.card} data-name={animal.name}>
+      <li className={styles.card}>
         <Image
           className={styles.image}
           src={animal.img}
@@ -46,7 +46,7 @@ function AnimalCard({
         <h3>{animal.name}</h3>
 
         <Button
-          colorType={ButtonColorType.COLORED}
+          colorType={ButtonColorType.WHITE}
           contentType={ButtonContentType.STRING}
           onClick={() =>
             router.push(`/animal/${animal.name}`, { scroll: false })

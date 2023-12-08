@@ -21,7 +21,7 @@
   }
 }
 
-.friends-carousel {
+.carousel {
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -36,63 +36,79 @@
     justify-content: center;
     row-gap: 20px;
     column-gap: 80px;
-    h3 {
-      font-size: 20px;
-      line-height: 23px;
+
+    button {
+      order: 5;
     }
   }
 }
 
-.friends-list {
+.window {
   display: flex;
   justify-content: center;
-  gap: 0;
-  overflow: hidden;
+  align-items: center;
+  gap: 90px;
   width: 990px;
+  overflow: hidden;
 
   @media (max-width: 1279px) {
     gap: 40px;
     width: 580px;
   }
+
   @media (max-width: 767px) {
+    gap: 20px;
     width: 270px;
   }
 
   ul {
     display: flex;
+    justify-content: center;
+    align-items: center;
     gap: 90px;
+
+    &.animation-left {
+      transform: translateX(1080px);
+      transition: transform 1s;
+    }
+
+    &.animation-right {
+      transform: translateX(-1080px);
+      transition: transform 1s;
+    }
 
     li:not(:nth-child(-n + 3)) {
       display: none;
     }
+
     @media (max-width: 1279px) {
       gap: 40px;
+
+      &.animation-left {
+        transform: translateX(620px);
+      }
+
+      &.animation-right {
+        transform: translateX(-620px);
+      }
+
       li:not(:nth-child(-n + 2)) {
         display: none;
       }
     }
+
     @media (max-width: 767px) {
+      &.animation-left {
+        transform: translateX(290px);
+      }
+
+      &.animation-right {
+        transform: translateX(-290px);
+      }
+
       li:not(:nth-child(-n + 1)) {
         display: none;
       }
-    }
-  }
-}
-
-.friends-control-button {
-  width: 52px;
-  height: 52px;
-  border-radius: 50px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-
-  @media (max-width: 767px) {
-    &:first-child {
-      order: 222;
-    }
-    &:last-child {
-      order: 224;
     }
   }
 }

@@ -1,50 +1,41 @@
 @import '../../../variables.module.scss';
 
 .button {
-  padding: 15px;
   color: black;
   border-radius: 100px;
   display: flex;
   align-items: center;
   justify-content: center;
   font-size: 17px;
+  transition: 0.5s;
 
   &.string {
     padding: 15px 45px;
   }
 
+  &.symbol {
+    padding: 15px;
+
+    &:disabled {
+      border: 2px solid #cdcdcd;
+    }
+  }
+
   &.colored {
     background-color: $emphasis-color;
+
+    &:hover {
+      background: $emphasis-hover-color;
+    }
   }
 
   &.white {
     background-color: transparent;
     border: 2px solid $emphasis-color;
+
+    &:hover {
+      background: $emphasis-hover-color;
+      border: 2px solid $emphasis-hover-color;
+    }
   }
 }
-
-/*
-.like-button {
-  
-  transition: background 0.5s;
-  font-size: 17px;
-  line-height: 130%;
-
-  &:hover {
-    background: $emphasis-hover-color;
-  }
-}
-
-
-.like-button_white {
-  
-  transition: background 0.5s, border 0.5s;
-
-  &:hover {
-    background: $emphasis-hover-color;
-    border: 2px solid $emphasis-hover-color;
-  }
-}
-
-
-*/
