@@ -3,10 +3,6 @@
   flex-direction: column;
   align-items: center;
   justify-content: space-between;
-
-  h1 {
-    color: #ffffff;
-  }
 }
 
 .first-screen-content {
@@ -21,7 +17,6 @@
     padding: 223px 775px 243px 40px;
     align-items: flex-start;
     flex-direction: column;
-
     flex-grow: 1;
     color: #cdcdcd;
 
@@ -33,12 +28,6 @@
       padding: 30px 10px 377px 10px;
       align-items: center;
       text-align: center;
-    }
-
-    h1 {
-      @media (max-width: 767px) {
-        letter-spacing: 0.06em;
-      }
     }
 
     .like-button {

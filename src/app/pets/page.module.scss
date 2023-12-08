@@ -12,21 +12,11 @@
     gap: 30px;
     min-height: 1733px;
   }
+
   @media (max-width: 767px) {
     padding: 42px 0;
     gap: 42px;
     min-height: 1649px;
-  }
-  h1 {
-    font-size: 35px;
-    line-height: 130%;
-    letter-spacing: 0.06em;
-
-    @media (max-width: 767px) {
-      font-size: 25px;
-      line-height: 130%;
-      letter-spacing: 0.06em;
-    }
   }
 }
 
@@ -38,6 +28,7 @@
   padding: 15px 0;
   align-items: center;
   justify-content: center;
+
   li:not(:nth-child(-n + 8)) {
     display: none;
   }
@@ -45,6 +36,7 @@
   @media (max-width: 1279px) {
     row-gap: 30px;
     padding: unset;
+
     li:not(:nth-child(-n + 6)) {
       display: none;
     }
@@ -53,12 +45,9 @@
     li:not(:first-child) {
       display: flex;
     }
+
     li:not(:nth-child(-n + 3)) {
       display: none;
-    }
-    h3 {
-      font-size: 20px;
-      line-height: 23px;
     }
   }
 }
@@ -68,6 +57,7 @@
 
 .friends-carousel {
   gap: 20px;
+
   @media (max-width: 1279px) {
     margin-top: 10px;
   }

@@ -6,10 +6,10 @@ function Pets() {
   return (
     <main>
       <div className={`${styles.container} container`}>
-        <h1>
+        <h2>
           Our friends who <br />
           are looking for a house
-        </h1>
+        </h2>
         <ul className={styles['friends-list-pagination']} />
         <div className={styles['friends-carousel']}>
           <button
