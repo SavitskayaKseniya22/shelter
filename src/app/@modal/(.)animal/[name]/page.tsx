@@ -1,11 +1,10 @@
 'use client';
 
 import React, { useState } from 'react';
-import AnimalCard, {
-  AnimalCartType,
-  AnimalType,
-} from '@/app/components/shared/AnimalCard/AnimalCard';
+
 import Popup from '@/app/components/shared/Popup/Popup';
+import AnimalCard from '@/app/components/shared/AnimalCard/AnimalCard';
+import { AnimalType, AnimalCartType } from '@/app/interfaces';
 import json from '../../../../../public/json/pets.json';
 
 function AnimalModal({

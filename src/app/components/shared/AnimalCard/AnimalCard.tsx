@@ -3,25 +3,9 @@
 import React from 'react';
 import Image from 'next/image';
 import { useRouter } from 'next/navigation';
+import { AnimalType, AnimalCartType } from '@/app/interfaces';
 import styles from './animal-card.module.scss';
 import Button, { ButtonColorType, ButtonContentType } from '../Button/Button';
-
-export interface AnimalType {
-  name: string;
-  img: string;
-  type: string;
-  breed: string;
-  description: string;
-  age: string;
-  inoculations: string[];
-  diseases: string[];
-  parasites: string[];
-}
-
-export enum AnimalCartType {
-  SHORT,
-  DETAILED,
-}
 
 function AnimalCard({
   animal,

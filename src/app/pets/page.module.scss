@@ -29,78 +29,20 @@
   align-items: center;
   justify-content: center;
 
-  li:not(:nth-child(-n + 8)) {
-    display: none;
-  }
-
   @media (max-width: 1279px) {
     row-gap: 30px;
     padding: unset;
-
-    li:not(:nth-child(-n + 6)) {
-      display: none;
-    }
-  }
-  @media (max-width: 767px) {
-    li:not(:first-child) {
-      display: flex;
-    }
-
-    li:not(:nth-child(-n + 3)) {
-      display: none;
-    }
   }
 }
-.friends-page-number {
-  pointer-events: none;
-}
 
-.friends-carousel {
+.controls {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: nowrap;
   gap: 20px;
 
-  @media (max-width: 1279px) {
-    margin-top: 10px;
-  }
   @media (max-width: 767px) {
-    flex-wrap: nowrap;
     gap: 10px;
-    margin-top: unset;
-  }
-
-  .like-button {
-    padding: 0;
-    border: none;
-  }
-
-  .friends-control-button {
-    &:disabled {
-      cursor: auto;
-      border: 2px solid #cdcdcd;
-      &:hover {
-        cursor: auto;
-        background-color: transparent;
-      }
-    }
-    @media (max-width: 767px) {
-      &:first-child {
-        order: unset;
-      }
-      &:last-child {
-        order: unset;
-      }
-    }
-  }
-  .friends-pag-button__left_last img,
-  .friends-pag-button__left img {
-    transform: rotate(180deg);
-  }
-}
-
-.friends-pag-button__left_last,
-.friends-pag-button__left,
-.friends-pag-button__right_last,
-.friends-pag-button__right {
-  &[disabled] img {
-    opacity: 0.5;
   }
 }

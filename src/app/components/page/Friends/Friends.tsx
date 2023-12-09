@@ -3,16 +3,14 @@
 import React, { useEffect, useMemo, useRef, useState } from 'react';
 import Image from 'next/image';
 import { useRouter } from 'next/navigation';
+import { AnimalType, AnimalCartType } from '@/app/interfaces';
 import styles from './friends.module.scss';
 import json from '../../../../../public/json/pets.json';
 import Button, {
   ButtonColorType,
   ButtonContentType,
 } from '../../shared/Button/Button';
-import AnimalCard, {
-  AnimalCartType,
-  AnimalType,
-} from '../../shared/AnimalCard/AnimalCard';
+import AnimalCard from '../../shared/AnimalCard/AnimalCard';
 
 function getRandomInt(max: number) {
   return Math.floor(Math.random() * Math.floor(max));

@@ -20,9 +20,16 @@
 
   &.symbol {
     padding: 15px;
+    width: 52px;
+    height: 52px;
 
     &:disabled {
       border: 2px solid #cdcdcd;
+      pointer-events: none;
+
+      img {
+        filter: grayscale(100%) opacity(50%);
+      }
     }
   }
 
