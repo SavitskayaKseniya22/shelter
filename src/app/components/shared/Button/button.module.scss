@@ -9,10 +9,13 @@
   font-size: 17px;
   transition: 0.5s;
   border: none;
-  font-family: inherit;
-  font-size: inherit;
+
+  font-size: 17px;
   line-height: 1;
   cursor: pointer;
+  font-family: $emphasis-font-family;
+  font-style: $main-font-style;
+  font-weight: $main-font-weight;
 
   &.string {
     padding: 15px 45px;

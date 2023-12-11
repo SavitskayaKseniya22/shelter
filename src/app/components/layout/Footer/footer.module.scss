@@ -2,77 +2,65 @@
 
 .footer {
   position: relative;
-  z-index: -2;
+}
 
-  h2 {
+.container {
+  padding: 56px 500px 60px 40px;
+  gap: 160px;
+  position: relative;
+
+  @media (max-width: 1279px) {
+    padding: 30px 30px 375px 30px;
+    gap: 60px;
+  }
+
+  @media (max-width: 767px) {
+    flex-direction: column;
+    padding: 30px 10px 309px 10px;
+    gap: 40px;
+  }
+}
+
+.contacts,
+.address {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: space-between;
+  flex-grow: 2;
+  max-width: 300px;
+  height: 234px;
+
+  @media (max-width: 767px) {
+    align-items: center;
+    height: 215px;
+  }
+
+  h3 {
     color: white;
   }
+}
 
-  img {
-    z-index: -5;
+.image_dog {
+  @media (max-width: 1279px) {
+    right: 234px !important;
   }
 
-  .container {
-    padding: 56px 40px;
-    gap: 160px;
-    position: relative;
-
-    @media (max-width: 1279px) {
-      padding: 30px 30px 375px 30px;
-      gap: 60px;
-      justify-content: center;
-    }
-
-    @media (max-width: 767px) {
-      flex-direction: column;
-      align-items: center;
-      padding: 30px 10px 309px 10px;
-      gap: 40px;
-      justify-content: center;
-    }
-
-    img {
-      z-index: -1;
-    }
+  @media (max-width: 767px) {
+    width: 260px !important;
+    height: 269px !important;
+    right: 30px !important;
   }
+}
 
-  section {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    flex-grow: 2;
-    max-width: 300px;
-    padding: 0.5rem;
-
-    @media (max-width: 767px) {
-      align-items: center;
-    }
-
-    a {
-      min-height: 32px;
-      font-size: 20px;
-      color: $emphasis-color;
-      line-height: 32px;
-      display: flex;
-      justify-content: flex-start;
-      align-items: center;
-      gap: 1rem;
-    }
-
-    &.contacts {
-      gap: 40px;
-    }
-
-    &.address {
-      gap: 32px;
-
-      a {
-        line-height: 115%;
-      }
-
-      @media (max-width: 767px) {
-        gap: 40px;
-      }
-    }
-  }
+.link {
+  min-height: 32px;
+  font-size: 20px;
+  color: $emphasis-color;
+  line-height: 32px;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 1rem;
+  line-height: 115%;
 }

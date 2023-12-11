@@ -1,0 +1,38 @@
+@import '../../../variables.module.scss';
+
+.logo {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  align-items: center;
+
+  h1 {
+    font-size: 32px;
+    line-height: 110%;
+  }
+
+  p {
+    font-size: 13px;
+    line-height: 115%;
+    letter-spacing: 0.1em;
+  }
+
+  &.regular {
+    h1 {
+      color: #545454;
+    }
+
+    p {
+      color: #292929;
+    }
+  }
+
+  &.primary {
+    h1 {
+      color: $emphasis-color;
+    }
+    p {
+      color: #ffffff;
+    }
+  }
+}

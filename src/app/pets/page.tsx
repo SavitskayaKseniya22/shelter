@@ -135,16 +135,16 @@ function Pets() {
   }, [widthRange]);
 
   return (
-    <main>
+    <main className={styles.pets}>
       <div className={`${styles.container} container`}>
-        <h2>
+        <h3>
           Our friends who <br />
           are looking for a house
-        </h2>
+        </h3>
 
         {animals && widthRange !== null && (
           <>
-            <ul className={styles['friends-list-pagination']}>
+            <ul className={styles.pagination}>
               {animals.getRangeData(widthRange, pageNumber).map((animal) => {
                 const key = Math.random();
                 return (

@@ -17,11 +17,11 @@ function About() {
         />
 
         <div className={styles.content}>
-          <h2>
+          <h3>
             About the shelter
             <br />
             “Cozy House”
-          </h2>
+          </h3>
           <p>
             Currently we have 121 dogs and 342 cats on our hands and statistics
             show that only 20% of them will find a family. The others will

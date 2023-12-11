@@ -20,11 +20,11 @@ function Donation() {
           height={261}
         />
         <div className={styles.content}>
-          <h2>
+          <h3>
             You can also <br />
             make a donation
-          </h2>
-          <h4>Name of the bank / Type of bank account</h4>
+          </h3>
+          <h5>Name of the bank / Type of bank account</h5>
 
           <Button
             colorType={ButtonColorType.COLORED}

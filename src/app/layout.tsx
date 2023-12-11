@@ -1,11 +1,19 @@
 import React from 'react';
 import type { Metadata } from 'next';
-import { Inter } from 'next/font/google';
+import localFont from 'next/font/local';
 import Footer from './components/layout/Footer/Footer';
 import Header from './components/layout/Header/Header';
 import './globals.scss';
 
-const inter = Inter({ subsets: ['latin'] });
+const Arial = localFont({
+  src: './../../public/fonts/Arial.ttf',
+  display: 'swap',
+});
+
+const Georgia = localFont({
+  src: './../../public/fonts/Georgia.ttf',
+  display: 'swap',
+});
 
 export const metadata: Metadata = {
   title: 'Shelter',
@@ -20,8 +28,8 @@ export default function RootLayout({
   modal: React.ReactNode;
 }) {
   return (
-    <html lang="en">
-      <body className={inter.className}>
+    <html lang="en" className={`${Arial.className} ${Georgia.className}`}>
+      <body>
         <Header />
         {children}
         {modal}

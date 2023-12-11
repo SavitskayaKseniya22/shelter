@@ -10,24 +10,33 @@ function Footer() {
     <footer className={styles.footer} id="contacts">
       <Image
         src="/images/start-screen-gradient-background.png"
-        layout="fill"
-        objectFit="cover"
-        quality={100}
+        fill
         alt="Background"
+        style={{
+          objectFit: 'cover',
+          objectPosition: 'bottom  left',
+          right: 'unset',
+          top: 'unset',
+        }}
+        quality={100}
       />
+
       <div className={`${styles.container} container`}>
         <Image
           src="/images/footer-puppy.png"
-          layout="fill"
-          objectFit="scale-down"
-          objectPosition="right bottom"
-          quality={100}
           alt="Puppy"
-          fill
+          width={300}
+          height={310}
+          style={{
+            position: 'absolute',
+            bottom: '0',
+            right: '40px',
+          }}
+          className={styles.image_dog}
         />
         <section className={styles.contacts}>
-          <h2>For questions and suggestions</h2>
-          <Link href="mailto:email@shelter.com">
+          <h3>For questions and suggestions</h3>
+          <Link href="mailto:email@shelter.com" className={styles.link}>
             <Image
               src="/icons/icon-email.svg"
               width={40}
@@ -37,7 +46,7 @@ function Footer() {
             email@shelter.com
           </Link>
 
-          <Link href="tel:+136745677554">
+          <Link href="tel:+136745677554" className={styles.link}>
             <Image
               src="/icons/icon-phone.svg"
               width={40}
@@ -49,9 +58,13 @@ function Footer() {
         </section>
 
         <section className={styles.address}>
-          <h2>We are waiting for your visit</h2>
+          <h3>We are waiting for your visit</h3>
 
-          <Link href="https://goo.gl/maps/EDAPioWz4G93bjD1A" target="_blank">
+          <Link
+            href="https://goo.gl/maps/EDAPioWz4G93bjD1A"
+            target="_blank"
+            className={styles.link}
+          >
             <Image
               src="/icons/icon-marker.svg"
               width={22}
@@ -61,7 +74,11 @@ function Footer() {
             1 Central Street, Boston (entrance from the store)
           </Link>
 
-          <Link href="https://goo.gl/maps/JMV9z4e7cCeDLoC86" target="_blank">
+          <Link
+            href="https://goo.gl/maps/JMV9z4e7cCeDLoC86"
+            target="_blank"
+            className={styles.link}
+          >
             <Image
               src="/icons/icon-marker.svg"
               width={22}

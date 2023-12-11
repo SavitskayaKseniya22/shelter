@@ -3,21 +3,20 @@
 'use client';
 
 import React from 'react';
-import Link from 'next/link';
+import { usePathname } from 'next/navigation';
 import styles from './header.module.scss';
-
-export function Logo() {
-  return (
-    <div className={styles.logo}>
-      <Link href="/">Cozy House</Link>
-      <p>Shelter for pets in Boston</p>
-    </div>
-  );
-}
+import NavLink from '../../shared/NavLink/NavLink';
+import Logo from '../Logo/Logo';
 
 function Header() {
+  const pathname = usePathname();
+
   return (
-    <header className={styles.header}>
+    <header
+      className={`${styles.header} ${
+        pathname !== '/' ? styles.regular : styles.primary
+      }`}
+    >
       <div className={`${styles.container} container`}>
         <Logo />
 
@@ -25,27 +24,27 @@ function Header() {
 
         <label
           htmlFor={styles['burger-icon']}
-          className={styles['header-nav__burger']}
+          className={styles.navigation__burger}
         />
 
-        <div className={styles['header-nav__links-wrapper']}>
+        <div className={styles.navigation}>
           <label
             htmlFor={styles['burger-icon']}
-            className={`${styles['header-nav__burger-close']} ${styles['header-nav__burger']}`}
+            className={`${styles['navigation__burger-close']} ${styles.navigation__burger}`}
           />
 
-          <ul className={styles['header-nav__links']}>
+          <ul className={styles.navigation__content}>
             <li>
-              <Link href="/">About the shelter</Link>
+              <NavLink href="/">About the shelter</NavLink>
             </li>
             <li>
-              <Link href="/pets">Our pets</Link>
+              <NavLink href="/pets">Our pets</NavLink>
             </li>
             <li>
-              <Link href="/#help">Help the shelter</Link>
+              <NavLink href="/#help">Help the shelter</NavLink>
             </li>
             <li>
-              <Link href="/#contacts">Contacts</Link>
+              <NavLink href="/#contacts">Contacts</NavLink>
             </li>
           </ul>
         </div>

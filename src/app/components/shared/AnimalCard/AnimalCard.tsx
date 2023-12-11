@@ -5,6 +5,7 @@ import Image from 'next/image';
 import { useRouter } from 'next/navigation';
 import { AnimalType, AnimalCartType } from '@/app/interfaces';
 import styles from './animal-card.module.scss';
+import stylesDetailed from '../../../animal/[name]/page.module.scss';
 import Button, { ButtonColorType, ButtonContentType } from '../Button/Button';
 
 function AnimalCard({
@@ -27,7 +28,7 @@ function AnimalCard({
           height="270"
         />
 
-        <h3>{animal.name}</h3>
+        <h4>{animal.name}</h4>
 
         <Button
           colorType={ButtonColorType.WHITE}
@@ -45,7 +46,7 @@ function AnimalCard({
   return (
     <div className={styles['card-detailed']}>
       <Image
-        className={styles.image}
+        className={`${styles.image} ${stylesDetailed.image}`}
         src={animal.img}
         alt="Animal"
         width="270"
@@ -54,8 +55,8 @@ function AnimalCard({
 
       <div className={styles.content}>
         <div className={styles.titles}>
-          <h2>{animal.name}</h2>
-          <h3>{animal.breed}</h3>
+          <h3>{animal.name}</h3>
+          <h4>{animal.breed}</h4>
         </div>
 
         <p>{animal.description}</p>

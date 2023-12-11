@@ -20,7 +20,7 @@ function HelpItem({ title, src }: { title: string; src: string }) {
   return (
     <li className={styles['help-item']}>
       <Image width={60} height={60} src={src} alt={title} />
-      <h3>{title}</h3>
+      <h4>{title}</h4>
     </li>
   );
 }
@@ -29,10 +29,10 @@ function Help() {
   return (
     <section id="help">
       <div className={`${styles.container} container`}>
-        <h2>
+        <h3>
           How you can help <br />
           our shelter
-        </h2>
+        </h3>
         <ul className={styles['help-list']}>
           {data.map((item) => (
             <HelpItem title={item.title} src={item.src} key={item.title} />

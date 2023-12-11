@@ -104,10 +104,10 @@ function Friends() {
   return (
     <section className={styles.friends} id="friends">
       <div className={`${styles.container} container`}>
-        <h2>
+        <h3>
           Our friends who <br />
           are looking for a house
-        </h2>
+        </h3>
         <div className={styles.carousel}>
           <Button
             colorType={ButtonColorType.WHITE}
