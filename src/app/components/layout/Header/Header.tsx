@@ -2,7 +2,7 @@
 
 'use client';
 
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { usePathname } from 'next/navigation';
 import styles from './header.module.scss';
 import NavLink from '../../shared/NavLink/NavLink';
@@ -10,6 +10,36 @@ import Logo from '../Logo/Logo';
 
 function Header() {
   const pathname = usePathname();
+  const [isOpen, setIsOpen] = useState(false);
+
+  useEffect(() => {
+    const handleClick = (event: MouseEvent) => {
+      const target = event.target as HTMLElement;
+      if (
+        isOpen &&
+        (target.classList.contains(`${styles.navigation}`) ||
+          target.tagName === 'A')
+      ) {
+        setIsOpen(false);
+        document.body.style.overflow = 'unset';
+      }
+    };
+
+    const handleResize = (e: Event) => {
+      if ((e.target as Window).innerWidth > 767 && isOpen) {
+        setIsOpen(false);
+        document.body.style.overflow = 'unset';
+      }
+    };
+
+    window.addEventListener('resize', handleResize);
+    window.addEventListener('click', handleClick);
+
+    return () => {
+      window.removeEventListener('click', handleClick);
+      window.removeEventListener('resize', handleResize);
+    };
+  }, [isOpen]);
 
   return (
     <header
@@ -20,7 +50,17 @@ function Header() {
       <div className={`${styles.container} container`}>
         <Logo />
 
-        <input type="checkbox" id={styles['burger-icon']} />
+        <input
+          type="checkbox"
+          id={styles['burger-icon']}
+          checked={isOpen}
+          onChange={(e) => {
+            setIsOpen(e.target.checked);
+            document.body.style.overflow = e.target.checked
+              ? 'hidden'
+              : 'unset';
+          }}
+        />
 
         <label
           htmlFor={styles['burger-icon']}

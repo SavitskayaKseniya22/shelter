@@ -1,6 +1,6 @@
 'use client';
 
-import React from 'react';
+import React, { useState } from 'react';
 import Image from 'next/image';
 import styles from './donation.module.scss';
 import Button, {
@@ -9,6 +9,9 @@ import Button, {
 } from '../../shared/Button/Button';
 
 function Donation() {
+  const cardNumber = '8380 2880 8028 8791 7435';
+  const [buttonContent, setButtonContent] = useState(cardNumber);
+
   return (
     <section className={styles.donation}>
       <div className={`${styles.container} container`}>
@@ -28,8 +31,23 @@ function Donation() {
 
           <Button
             colorType={ButtonColorType.COLORED}
-            contentType={ButtonContentType.SYMBOL}
-            onClick={() => {}}
+            contentType={ButtonContentType.STRING}
+            disabled={buttonContent === 'Copied!'}
+            onClick={() => {
+              navigator.clipboard
+                .writeText('83802880802887917435')
+                .then(() => {
+                  setButtonContent('Copied!');
+                  return (function delay() {
+                    return new Promise((resolve) => {
+                      setTimeout(resolve, 1000);
+                    });
+                  })();
+                })
+                .then(() => {
+                  setButtonContent(cardNumber);
+                });
+            }}
           >
             <Image
               width={20}
@@ -37,7 +55,7 @@ function Donation() {
               src="/icons/credit-card.svg"
               alt="card"
             />
-            <span>8380 2880 8028 8791 7435</span>
+            <span>{buttonContent}</span>
           </Button>
 
           <i>

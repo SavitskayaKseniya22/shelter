@@ -19,11 +19,11 @@
 
   &.regular {
     h1 {
-      color: #545454;
+      color: $titles-color;
     }
 
     p {
-      color: #292929;
+      color: $action-color;
     }
   }
 
@@ -32,7 +32,7 @@
       color: $emphasis-color;
     }
     p {
-      color: #ffffff;
+      color: white;
     }
   }
 }

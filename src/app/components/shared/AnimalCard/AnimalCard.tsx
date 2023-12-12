@@ -60,6 +60,7 @@ function AnimalCard({
         </div>
 
         <p>{animal.description}</p>
+
         <ul>
           <li>
             <b>Age: </b> {animal.age}

@@ -1,3 +1,5 @@
+@import '../../../variables.module.scss';
+
 .first-screen {
   display: flex;
   flex-direction: column;
@@ -32,7 +34,7 @@
   position: relative;
 
   p {
-    color: #cdcdcd;
+    color: $addition-light-color;
   }
 
   @media (max-width: 1279px) {

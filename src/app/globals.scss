@@ -5,21 +5,26 @@
 }
 
 html {
-  scroll-behavior: smooth;
   font-size: 15px;
 }
 
 body {
+  scroll-behavior: smooth;
   width: 100vw;
   height: 100vh;
   display: flex;
   justify-content: space-between;
   flex-direction: column;
-  color: $main-color;
-  line-height: 160%;
   position: relative;
-  font-family: $main-font-family;
+}
+
+p {
+  font-size: 1rem;
+  font-style: normal;
+  line-height: 160%;
   font-weight: $main-font-weight;
+  font-family: $main-font-family;
+  color: $main-color;
 }
 
 h1,
@@ -39,7 +44,7 @@ h2 {
   font-size: 44px;
   line-height: 130%;
   letter-spacing: 0;
-  color: #ffffff;
+  color: white;
 
   @media (max-width: 767px) {
     font-size: 25px;
@@ -50,6 +55,7 @@ h2 {
 h3 {
   font-size: 35px;
   line-height: 130%;
+  letter-spacing: 2.1px;
 
   @media (max-width: 767px) {
     font-size: 25px;
@@ -61,6 +67,7 @@ h3 {
 h4 {
   font-size: 20px;
   line-height: 115%;
+  letter-spacing: 1.2px;
 
   @media (max-width: 767px) {
     font-size: 15px;
@@ -93,8 +100,6 @@ a {
   text-decoration: none;
   color: inherit;
   font-size: inherit;
-  line-height: 1;
-  font-family: $emphasis-font-family;
   font-style: $main-font-style;
   font-weight: $main-font-weight;
 }

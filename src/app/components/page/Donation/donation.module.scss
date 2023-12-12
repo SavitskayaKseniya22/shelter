@@ -41,13 +41,15 @@
   }
 
   @media (max-width: 767px) {
+    width: 100%;
     gap: 23px;
   }
 
   i {
     font-size: 12px;
     line-height: 150%;
-    color: #b2b2b2;
+    color: $addition-dark-color;
+    text-align: justify;
   }
 
   button {
@@ -58,10 +60,18 @@
     white-space: nowrap;
     line-height: 115%;
 
+    &:disabled {
+      pointer-events: none;
+    }
+
     @media (max-width: 767px) {
       width: 100%;
       font-size: 15px;
       line-height: 110%;
+    }
+
+    span {
+      flex-grow: 22;
     }
   }
 }
