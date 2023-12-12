@@ -6,16 +6,10 @@
   width: 270px;
   height: 435px;
   display: flex;
-  align-items: center;
-  background: #fafafa;
-  padding-bottom: 30px;
-  border-radius: 9px;
   cursor: pointer;
-
-  .image {
-    border-top-left-radius: 9px;
-    border-top-right-radius: 9px;
-  }
+  background: #fafafa;
+  border-radius: 9px;
+  border-radius: 9px;
 
   &:hover {
     background: white;
@@ -25,13 +19,27 @@
       border: 2px solid $emphasis-hover-color;
     }
   }
+
+  .content {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    flex-grow: 2;
+    gap: 30px;
+    padding: 30px;
+  }
+
+  .image {
+    border-top-left-radius: 9px;
+    border-top-right-radius: 9px;
+  }
 }
 
 .card-detailed {
   display: flex;
   background-color: white;
   border-radius: 9px;
-
   color: black;
   align-items: center;
   justify-content: space-evenly;

@@ -48,6 +48,7 @@ function Popup({ children }: { children: ReactNode }) {
           onClick={() => {
             closePopup();
           }}
+          className={styles.popup__close}
         >
           <Image
             className={styles.image}

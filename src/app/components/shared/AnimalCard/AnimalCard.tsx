@@ -27,18 +27,19 @@ function AnimalCard({
           width="270"
           height="270"
         />
+        <div className={styles.content}>
+          <h4>{animal.name}</h4>
 
-        <h4>{animal.name}</h4>
-
-        <Button
-          colorType={ButtonColorType.WHITE}
-          contentType={ButtonContentType.STRING}
-          onClick={() =>
-            router.push(`/animal/${animal.name}`, { scroll: false })
-          }
-        >
-          Learn more
-        </Button>
+          <Button
+            colorType={ButtonColorType.WHITE}
+            contentType={ButtonContentType.STRING}
+            onClick={() =>
+              router.push(`/animal/${animal.name}`, { scroll: false })
+            }
+          >
+            Learn more
+          </Button>
+        </div>
       </li>
     );
   }

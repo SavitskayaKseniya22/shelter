@@ -1,3 +1,5 @@
+/* eslint-disable react/require-default-props */
+
 'use client';
 
 import React, { ReactNode } from 'react';
@@ -18,28 +20,26 @@ function Button({
   colorType,
   contentType,
   onClick,
-  disabled,
+  disabled = false,
+  className = '',
 }: {
   children: ReactNode;
   colorType: ButtonColorType;
   contentType: ButtonContentType;
   onClick: () => void;
   disabled?: boolean;
+  className?: string;
 }) {
   return (
     <button
       disabled={disabled}
       type="button"
-      className={`${styles.button} ${styles[colorType]} ${styles[contentType]}`}
+      className={`${styles.button} ${styles[colorType]} ${styles[contentType]} ${className}`}
       onClick={onClick}
     >
       {children}
     </button>
   );
 }
-
-Button.defaultProps = {
-  disabled: false,
-};
 
 export default Button;
