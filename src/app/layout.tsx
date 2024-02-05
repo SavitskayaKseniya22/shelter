@@ -29,6 +29,9 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" className={`${Arial.className} ${Georgia.className}`}>
+      <head>
+        <link rel="icon" href="/favicon.png" />
+      </head>
       <body>
         <Header />
         {children}

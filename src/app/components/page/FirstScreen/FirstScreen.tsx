@@ -14,6 +14,7 @@ function FirstScreen() {
     <section className={styles['first-screen']}>
       <Image
         src="/images/start-screen-gradient-background.png"
+        priority={false}
         fill
         style={{
           objectFit: 'cover',
@@ -29,6 +30,7 @@ function FirstScreen() {
       <div className={`container ${styles.container}`}>
         <Image
           src="/images/start-screen-puppy.png"
+          priority={false}
           width={698}
           height={728}
           style={{
