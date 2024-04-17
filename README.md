@@ -37,7 +37,7 @@ npm run dev
 
 ### Screenshots: 
 
-![изображение](https://raw.githubusercontent.com/SavitskayaKseniya22/projects-photos/main/photos/shelter/New%20folder/shelter-1920px.png)
+![изображение](https://raw.githubusercontent.com/SavitskayaKseniya22/projects-photos/main/photos/shelter/screenshots/shelter-1920px.png)
 
 
 
