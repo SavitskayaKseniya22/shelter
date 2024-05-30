@@ -52,6 +52,9 @@
 
 .image_dog {
   z-index: -2;
+  right: 40px !important;
+  width: 698px !important;
+  height: 728px !important;
 
   @media (max-width: 1279px) {
     width: 569px !important;

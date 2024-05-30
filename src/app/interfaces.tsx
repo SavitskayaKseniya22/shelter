@@ -15,6 +15,7 @@ export interface AnimalType {
   inoculations: string[];
   diseases: string[];
   parasites: string[];
+  spriteIndex: number;
 }
 
 export enum AnimalCartType {

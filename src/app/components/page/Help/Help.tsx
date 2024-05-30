@@ -1,25 +1,41 @@
 'use client';
 
 import React from 'react';
-import Image from 'next/image';
 import styles from './help.module.scss';
 
 const data = [
-  { title: 'Pet food', src: '/icons/icon-pet-food.svg' },
-  { title: 'Transportation', src: '/icons/icon-transportation.svg' },
-  { title: 'Toys', src: '/icons/icon-toys.svg' },
-  { title: 'Bowls and cups', src: '/icons/icon-bowls-and-cups.svg' },
-  { title: 'Shampoos', src: '/icons/icon-shampoos.svg' },
-  { title: 'Vitamins', src: '/icons/icon-vitamins.svg' },
-  { title: 'Medicines', src: '/icons/icon-medicines.svg' },
-  { title: 'Collars / leashes', src: '/icons/icon-collars-leashes.svg' },
-  { title: 'Sleeping areas', src: '/icons/icon-sleeping-area.svg' },
+  { title: 'Pet food', id: 'icon-pet-food' },
+  {
+    title: 'Transportation',
+    id: 'icon-transportation',
+  },
+  { title: 'Toys', id: 'icon-toys' },
+  {
+    title: 'Bowls and cups',
+    id: 'icon-bowls-and-cups',
+  },
+  { title: 'Shampoos', id: 'icon-shampoos' },
+  { title: 'Vitamins', id: 'icon-vitamins' },
+  {
+    title: 'Medicines',
+    id: 'icon-medicines',
+  },
+  {
+    title: 'Collars / leashes',
+    id: 'icon-bowls-and-cups',
+  },
+  {
+    title: 'Sleeping areas',
+    id: 'icon-sleeping-area',
+  },
 ];
 
-function HelpItem({ title, src }: { title: string; src: string }) {
+function HelpItem({ title, id }: { title: string; id: string }) {
   return (
     <li className={styles['help-item']}>
-      <Image width={60} height={60} src={src} alt={title} />
+      <svg>
+        <use href={`/icons/icon-help-sprite.svg#${id}`} />
+      </svg>
       <h4>{title}</h4>
     </li>
   );
@@ -35,7 +51,7 @@ function Help() {
         </h3>
         <ul className={styles['help-list']}>
           {data.map((item) => (
-            <HelpItem title={item.title} src={item.src} key={item.title} />
+            <HelpItem id={item.id} title={item.title} key={item.title} />
           ))}
         </ul>
       </div>

@@ -8,7 +8,6 @@ import Button, {
 } from '@/app/components/shared/Button/Button';
 import Spinner from '@/app/components/shared/Spinner/Spinner';
 import { AnimalCartType } from '@/app/interfaces';
-import Image from 'next/image';
 import CarouselData, { DirectionType } from './CarouselData';
 import styles from './carousel.module.scss';
 
@@ -76,12 +75,9 @@ export default function Carousel() {
           }}
           disabled={animation}
         >
-          <Image
-            width={14}
-            height={14}
-            src="/icons/icon-arrow-left.svg"
-            alt="arrow left"
-          />
+          <svg height={15}>
+            <use href="/icons/icon-arrows-sprite.svg#icon-arrow-left" />
+          </svg>
         </Button>
 
         <div className={styles.window}>
@@ -146,12 +142,9 @@ export default function Carousel() {
           }}
           disabled={animation}
         >
-          <Image
-            width={14}
-            height={14}
-            src="/icons/icon-arrow-right.svg"
-            alt="arrow right"
-          />
+          <svg height={15}>
+            <use href="/icons/icon-arrows-sprite.svg#icon-arrow-right" />
+          </svg>
         </Button>
       </div>
     );

@@ -31,8 +31,13 @@
   }
 
   .image {
-    border-top-left-radius: 9px;
-    border-top-right-radius: 9px;
+    position: relative;
+    width: 270px;
+    height: 270px;
+    img {
+      border-top-left-radius: 9px;
+      border-top-right-radius: 9px;
+    }
   }
 }
 
@@ -42,7 +47,8 @@
   border-radius: 9px;
   color: black;
   align-items: center;
-  justify-content: space-evenly;
+  justify-content: center;
+  gap: 1rem;
 
   .image {
     width: 55.6%;

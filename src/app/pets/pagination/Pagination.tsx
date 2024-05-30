@@ -7,7 +7,6 @@ import Button, {
 } from '@/app/components/shared/Button/Button';
 import { AnimalCartType, RangeType } from '@/app/interfaces';
 import React, { useEffect, useState } from 'react';
-import Image from 'next/image';
 import { checkRange } from '@/app/utils';
 import Spinner from '@/app/components/shared/Spinner/Spinner';
 import PaginationData from './PaginationData';
@@ -92,13 +91,9 @@ function Pagination() {
               setPageNumber(1);
             }}
           >
-            <Image
-              width={27}
-              height={23}
-              src="/icons/arrow-right-end.svg"
-              alt="arrow right end"
-              style={{ transform: 'rotate(0.5turn)' }}
-            />
+            <svg style={{ transform: 'rotate(0.5turn)' }}>
+              <use href="/icons/icon-arrows-sprite.svg#arrow-right-end" />
+            </svg>
           </Button>
 
           <Button
@@ -109,13 +104,9 @@ function Pagination() {
               setPageNumber((a) => (a > 1 ? a - 1 : 1));
             }}
           >
-            <Image
-              width={23}
-              height={13}
-              src="/icons/arrow-right-next.svg"
-              alt="arrow right next"
-              style={{ transform: 'rotate(0.5turn)' }}
-            />
+            <svg style={{ transform: 'rotate(0.5turn)' }}>
+              <use href="/icons/icon-arrows-sprite.svg#arrow-right-next" />
+            </svg>
           </Button>
 
           <Button
@@ -137,12 +128,9 @@ function Pagination() {
               });
             }}
           >
-            <Image
-              width={23}
-              height={13}
-              src="/icons/arrow-right-next.svg"
-              alt="arrow right next"
-            />
+            <svg>
+              <use href="/icons/icon-arrows-sprite.svg#arrow-right-next" />
+            </svg>
           </Button>
           <Button
             colorType={ButtonColorType.WHITE}
@@ -152,12 +140,9 @@ function Pagination() {
               setPageNumber(animals.getlastPageNumber(widthRange));
             }}
           >
-            <Image
-              width={27}
-              height={23}
-              src="/icons/arrow-right-end.svg"
-              alt="arrow right end"
-            />
+            <svg>
+              <use href="/icons/icon-arrows-sprite.svg#arrow-right-end" />
+            </svg>
           </Button>
         </div>
       </>
