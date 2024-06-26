@@ -1,4 +1,4 @@
-@import '../../../variables.module.scss';
+@import "../../../variables.module.scss";
 
 .card {
   flex-direction: column;
@@ -115,7 +115,7 @@
         letter-spacing: 0.9px;
 
         &::before {
-          content: url('/icons/icon-dot.svg');
+          content: url("/icons/icon-dot.svg");
           position: absolute;
           width: 4px;
           height: 4px;

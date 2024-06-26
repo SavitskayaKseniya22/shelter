@@ -1,14 +1,11 @@
-import React from 'react';
-import Link from 'next/link';
-import styles from './friends.module.scss';
-import linkStyles from '../../shared/Button/button.module.scss';
-import Carousel from './components/Carousel';
-import AnimalsContainer from '../../shared/AnimalsContainer/AnimalsContainer';
+import React from "react";
+import Link from "next/link";
+import styles from "./friends.module.scss";
+import linkStyles from "../../shared/Button/button.module.scss";
+import Carousel from "./components/Carousel";
+import AnimalsContainer from "../../shared/AnimalsContainer/AnimalsContainer";
 
 function Friends() {
-  
-
-
   return (
     <section className={styles.friends} id="friends">
       <div className={`${styles.container} container`}>
@@ -18,11 +15,12 @@ function Friends() {
         </h3>
 
         <AnimalsContainer>
-           <Carousel />
+          <Carousel />
         </AnimalsContainer>
 
-       
-        <Link href="/pets" className={`${linkStyles.button} ${linkStyles.colored} ${linkStyles.string}`}>Get to know the rest</Link>
+        <Link href="/pets" className={`${linkStyles.button} ${linkStyles.colored} ${linkStyles.string}`}>
+          Get to know the rest
+        </Link>
       </div>
     </section>
   );

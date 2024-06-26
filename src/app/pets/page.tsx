@@ -1,7 +1,7 @@
-import React from 'react';
-import styles from './page.module.scss';
-import Pagination from './pagination/Pagination';
-import AnimalsContainer from '../components/shared/AnimalsContainer/AnimalsContainer';
+import React from "react";
+import styles from "./page.module.scss";
+import Pagination from "./pagination/Pagination";
+import AnimalsContainer from "../components/shared/AnimalsContainer/AnimalsContainer";
 
 function Pets() {
   return (
@@ -14,7 +14,6 @@ function Pets() {
         <AnimalsContainer>
           <Pagination />
         </AnimalsContainer>
-        
       </div>
     </main>
   );

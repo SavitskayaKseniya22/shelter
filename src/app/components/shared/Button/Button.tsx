@@ -1,17 +1,16 @@
 /* eslint-disable react/require-default-props */
 
-
-import React, { ReactNode } from 'react';
-import styles from './button.module.scss';
+import React, { ReactNode } from "react";
+import styles from "./button.module.scss";
 
 export enum ButtonColorType {
-  COLORED = 'colored',
-  WHITE = 'white',
+  COLORED = "colored",
+  WHITE = "white",
 }
 
 export enum ButtonContentType {
-  STRING = 'string',
-  SYMBOL = 'symbol',
+  STRING = "string",
+  SYMBOL = "symbol",
 }
 
 function Button({
@@ -20,7 +19,7 @@ function Button({
   contentType,
   onClick,
   disabled = false,
-  className = '',
+  className = "",
 }: {
   children: ReactNode;
   colorType: ButtonColorType;

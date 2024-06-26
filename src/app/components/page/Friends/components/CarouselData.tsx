@@ -1,8 +1,8 @@
-import { AnimalType } from '@/app/interfaces';
+import { AnimalType } from "@/app/interfaces";
 
 export enum DirectionType {
-  RIGHT = 'right',
-  LEFT = 'left',
+  RIGHT = "right",
+  LEFT = "left",
 }
 
 function getRandomInt(max: number) {
@@ -52,20 +52,14 @@ export default class CarouselData {
   }
 
   updateRowLeft() {
-    this.row = [
-      ...this.getThreeCards(this.row.slice(0, 3)),
-      ...this.row.slice(0, 6),
-    ];
+    this.row = [...this.getThreeCards(this.row.slice(0, 3)), ...this.row.slice(0, 6)];
   }
 
   updateRowRight() {
-    this.row = [
-      ...this.row.slice(3, 9),
-      ...this.getThreeCards(this.row.slice(6, 9)),
-    ];
+    this.row = [...this.row.slice(3, 9), ...this.getThreeCards(this.row.slice(6, 9))];
   }
 
   getLength() {
-    return this.elements.length
+    return this.elements.length;
   }
 }

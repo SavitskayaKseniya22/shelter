@@ -1,4 +1,4 @@
-@import '../../../variables.module.scss';
+@import "../../../variables.module.scss";
 
 .link {
   display: inline-flex;
@@ -32,7 +32,7 @@
 
   &.active {
     &::after {
-      content: '';
+      content: "";
       position: absolute;
       bottom: -3px;
       background-color: $emphasis-color;

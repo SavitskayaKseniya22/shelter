@@ -1,30 +1,30 @@
-import React from 'react';
-import styles from './help.module.scss';
+import React from "react";
+import styles from "./help.module.scss";
 
 const data = [
-  { title: 'Pet food', id: 'icon-pet-food' },
+  { title: "Pet food", id: "icon-pet-food" },
   {
-    title: 'Transportation',
-    id: 'icon-transportation',
+    title: "Transportation",
+    id: "icon-transportation",
   },
-  { title: 'Toys', id: 'icon-toys' },
+  { title: "Toys", id: "icon-toys" },
   {
-    title: 'Bowls and cups',
-    id: 'icon-bowls-and-cups',
+    title: "Bowls and cups",
+    id: "icon-bowls-and-cups",
   },
-  { title: 'Shampoos', id: 'icon-shampoos' },
-  { title: 'Vitamins', id: 'icon-vitamins' },
+  { title: "Shampoos", id: "icon-shampoos" },
+  { title: "Vitamins", id: "icon-vitamins" },
   {
-    title: 'Medicines',
-    id: 'icon-medicines',
-  },
-  {
-    title: 'Collars / leashes',
-    id: 'icon-bowls-and-cups',
+    title: "Medicines",
+    id: "icon-medicines",
   },
   {
-    title: 'Sleeping areas',
-    id: 'icon-sleeping-area',
+    title: "Collars / leashes",
+    id: "icon-bowls-and-cups",
+  },
+  {
+    title: "Sleeping areas",
+    id: "icon-sleeping-area",
   },
 ];
 

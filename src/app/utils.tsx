@@ -1,4 +1,4 @@
-import { ScreenSize } from './interfaces';
+import { ScreenSize } from "./interfaces";
 
 export function shuffle<T>(array: T[]): T[] {
   const initArray = [...array];
@@ -22,7 +22,5 @@ export function checkRange() {
     return 2;
   }
 
-  return 0
-
-
+  return 0;
 }
