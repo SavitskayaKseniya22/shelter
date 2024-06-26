@@ -1,16 +1,9 @@
-'use client';
-
-import React, { useState } from 'react';
+import React from 'react';
 import Image from 'next/image';
 import styles from './donation.module.scss';
-import Button, {
-  ButtonColorType,
-  ButtonContentType,
-} from '../../shared/Button/Button';
+import CardWidget from './components/CardWidget/CardWidget';
 
 function Donation() {
-  const cardNumber = '8380 2880 8028 8791 7435';
-  const [buttonContent, setButtonContent] = useState(cardNumber);
 
   return (
     <section className={styles.donation}>
@@ -28,6 +21,8 @@ function Donation() {
             make a donation
           </h3>
           <h5>Name of the bank / Type of bank account</h5>
+
+          <CardWidget content="8380 2880 8028 8791 7435" />
 
           <i className={styles.addition}>
             Legal information and lorem ipsum dolor sit amet, consectetur
