@@ -1,5 +1,3 @@
-'use client';
-
 import React from 'react';
 import styles from './page.module.scss';
 import Pagination from './pagination/Pagination';
