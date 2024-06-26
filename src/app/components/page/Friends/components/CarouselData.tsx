@@ -64,4 +64,8 @@ export default class CarouselData {
       ...this.getThreeCards(this.row.slice(6, 9)),
     ];
   }
+
+  getLength() {
+    return this.elements.length
+  }
 }

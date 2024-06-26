@@ -13,11 +13,6 @@
 
   &:hover {
     background: white;
-
-    .like-button_white {
-      background: $emphasis-hover-color;
-      border: 2px solid $emphasis-hover-color;
-    }
   }
 
   .content {
@@ -34,6 +29,7 @@
     position: relative;
     width: 270px;
     height: 270px;
+
     img {
       border-top-left-radius: 9px;
       border-top-right-radius: 9px;
@@ -50,6 +46,12 @@
   justify-content: center;
   gap: 1rem;
 
+  @media (max-width: 767px) {
+    flex-direction: column;
+    gap: 1rem;
+    align-items: center;
+  }
+
   .image {
     width: 55.6%;
     height: auto;
@@ -58,12 +60,6 @@
     @media (max-width: 767px) {
       display: none;
     }
-  }
-
-  @media (max-width: 767px) {
-    flex-direction: column;
-    gap: 1rem;
-    align-items: center;
   }
 
   .content {
@@ -102,7 +98,7 @@
       }
     }
 
-    ul {
+    .characteristics {
       align-self: flex-start;
       display: flex;
       flex-direction: column;
@@ -111,25 +107,25 @@
       @media (max-width: 1929px) {
         gap: 5px;
       }
-    }
 
-    li {
-      margin-left: 15px;
-      line-height: 110%;
-      position: relative;
-      letter-spacing: 0.9px;
+      li {
+        margin-left: 15px;
+        line-height: 110%;
+        position: relative;
+        letter-spacing: 0.9px;
 
-      &::before {
-        content: url('/icons/icon-dot.svg');
-        position: absolute;
-        width: 4px;
-        height: 4px;
-        left: -12px;
-        top: -4px;
+        &::before {
+          content: url('/icons/icon-dot.svg');
+          position: absolute;
+          width: 4px;
+          height: 4px;
+          left: -12px;
+          top: -4px;
+        }
       }
     }
 
-    p {
+    .bio {
       line-height: 110%;
       letter-spacing: 0.06em;
       font-family: $emphasis-font-family;

@@ -86,4 +86,8 @@ export default class PaginationData {
   public getRangeData(widthRange: RangeType, pageNumber: number) {
     return this.ranges[widthRange][pageNumber - 1];
   }
+
+  getLength() {
+    return this.elements.length
+  }
 }

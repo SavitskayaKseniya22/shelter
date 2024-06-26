@@ -1,12 +1,11 @@
-'use client';
-
 import React from 'react';
 import Image from 'next/image';
-import { useRouter } from 'next/navigation';
 import { AnimalType, AnimalCartType } from '@/app/interfaces';
+import Link from 'next/link';
 import styles from './animal-card.module.scss';
+import linkStyles from '../Button/button.module.scss';
 import stylesDetailed from '../../../animal/[name]/page.module.scss';
-import Button, { ButtonColorType, ButtonContentType } from '../Button/Button';
+
 
 function AnimalCard({
   animal,
@@ -14,8 +13,8 @@ function AnimalCard({
 }: {
   animal: AnimalType;
   type: AnimalCartType;
-}) {
-  const router = useRouter();
+  }) {
+ 
   const {
     spriteIndex,
     name,
@@ -43,14 +42,7 @@ function AnimalCard({
 
         <div className={styles.content}>
           <h4>{name}</h4>
-
-          <Button
-            colorType={ButtonColorType.WHITE}
-            contentType={ButtonContentType.STRING}
-            onClick={() => router.push(`/animal/${name}`, { scroll: false })}
-          >
-            Learn more
-          </Button>
+          <Link href={`/animal/${name}`} scroll={false} className={`${linkStyles.button} ${linkStyles.white} ${linkStyles.string}`}>Learn more</Link>
         </div>
       </li>
     );
@@ -72,9 +64,9 @@ function AnimalCard({
           <h4>{breed}</h4>
         </div>
 
-        <p>{description}</p>
+        <p className={styles.bio}>{description}</p>
 
-        <ul>
+        <ul className={styles.characteristics}>
           <li>
             <b>Age: </b> {age}
           </li>

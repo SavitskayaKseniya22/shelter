@@ -1,6 +1,7 @@
 import React from 'react';
 import styles from './page.module.scss';
 import Pagination from './pagination/Pagination';
+import AnimalsContainer from '../components/shared/AnimalsContainer/AnimalsContainer';
 
 function Pets() {
   return (
@@ -10,7 +11,10 @@ function Pets() {
           Our friends who <br />
           are looking for a house
         </h3>
-        <Pagination />
+        <AnimalsContainer>
+          <Pagination />
+        </AnimalsContainer>
+        
       </div>
     </main>
   );
