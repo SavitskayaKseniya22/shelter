@@ -6,32 +6,33 @@
   gap: 10px;
   align-items: center;
 
-  h1 {
+  .title {
     font-size: 32px;
     line-height: 110%;
   }
 
-  p {
+  .slogan {
     font-size: 13px;
     line-height: 115%;
     letter-spacing: 0.1em;
   }
 
   &.regular {
-    h1 {
+    .title {
       color: $titles-color;
     }
 
-    p {
+    .slogan {
       color: $action-color;
     }
   }
 
   &.primary {
-    h1 {
+    .title {
       color: $emphasis-color;
     }
-    p {
+
+    .slogan {
       color: white;
     }
   }

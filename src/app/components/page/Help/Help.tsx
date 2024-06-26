@@ -30,8 +30,8 @@ const data = [
 
 function HelpItem({ title, id }: { title: string; id: string }) {
   return (
-    <li className={styles['help-item']}>
-      <svg>
+    <li className={styles.help__item}>
+      <svg className={styles.help__image}>
         <use href={`/icons/icon-help-sprite.svg#${id}`} />
       </svg>
       <h4>{title}</h4>
@@ -43,11 +43,11 @@ function Help() {
   return (
     <section id="help">
       <div className={`${styles.container} container`}>
-        <h3>
+        <h3 className={styles.title}>
           How you can help <br />
           our shelter
         </h3>
-        <ul className={styles['help-list']}>
+        <ul className={styles.help__list}>
           {data.map((item) => (
             <HelpItem id={item.id} title={item.title} key={item.title} />
           ))}

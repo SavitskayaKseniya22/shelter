@@ -31,12 +31,13 @@
   max-width: 300px;
   height: 234px;
 
+
   @media (max-width: 767px) {
     align-items: center;
     height: 215px;
   }
 
-  h3 {
+  .title {
     color: white;
   }
 }

@@ -33,7 +33,7 @@
   height: 788px;
   position: relative;
 
-  p {
+  .addition {
     color: $addition-light-color;
   }
 
@@ -50,7 +50,7 @@
   }
 }
 
-.image_dog {
+.image_main {
   z-index: -2;
   right: 40px !important;
   width: 698px !important;

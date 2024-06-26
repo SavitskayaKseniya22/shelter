@@ -44,7 +44,7 @@ function Footer() {
           className={styles.image_dog}
         />
         <section className={styles.contacts}>
-          <h3>For questions and suggestions</h3>
+          <h3 className={styles.title}>For questions and suggestions</h3>
           <Link href="mailto:email@shelter.com" className={styles.link}>
             <Image
               src="/icons/icon-email.svg"
@@ -67,7 +67,7 @@ function Footer() {
         </section>
 
         <section className={styles.address}>
-          <h3>We are waiting for your visit</h3>
+          <h3 className={styles.title}>We are waiting for your visit</h3>
 
           <Link
             href="https://goo.gl/maps/EDAPioWz4G93bjD1A"

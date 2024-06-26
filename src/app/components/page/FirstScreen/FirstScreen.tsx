@@ -51,7 +51,7 @@ function FirstScreen() {
           src="/images/start-screen-puppy-700.png"
           priority
           alt="Puppy"
-          className={styles.image_dog}
+          className={styles.image_main}
           quality={75}
           fill
           style={{
@@ -66,7 +66,7 @@ function FirstScreen() {
           <br />
           need a house
         </h2>
-        <p>
+        <p className={styles.addition}>
           We offer to give a chance to a little and nice puppy with an extremely
           wide and open heart. He or she will love you more than anybody else in
           the world, you will see!

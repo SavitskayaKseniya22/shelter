@@ -15,8 +15,8 @@ function Logo() {
         pathname !== '/' ? styles.regular : styles.primary
       }`}
     >
-      <h1>Cozy House</h1>
-      <p>Shelter for pets in Boston</p>
+      <h1 className={styles.title}>Cozy House</h1>
+      <p className={styles.slogan}>Shelter for pets in Boston</p>
     </Link>
   );
 }

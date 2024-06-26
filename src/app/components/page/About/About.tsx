@@ -15,7 +15,7 @@ function About() {
         />
 
         <div className={styles.content}>
-          <h3>
+          <h3 className={styles.title}>
             About the shelter
             <br />
             “Cozy House”

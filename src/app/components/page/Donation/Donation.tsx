@@ -29,36 +29,7 @@ function Donation() {
           </h3>
           <h5>Name of the bank / Type of bank account</h5>
 
-          <Button
-            colorType={ButtonColorType.COLORED}
-            contentType={ButtonContentType.STRING}
-            disabled={buttonContent === 'Copied!'}
-            onClick={() => {
-              navigator.clipboard
-                .writeText('83802880802887917435')
-                .then(() => {
-                  setButtonContent('Copied!');
-                  return (function delay() {
-                    return new Promise((resolve) => {
-                      setTimeout(resolve, 1000);
-                    });
-                  })();
-                })
-                .then(() => {
-                  setButtonContent(cardNumber);
-                });
-            }}
-          >
-            <Image
-              width={20}
-              height={20}
-              src="/icons/credit-card.svg"
-              alt="card"
-            />
-            <span>{buttonContent}</span>
-          </Button>
-
-          <i>
+          <i className={styles.addition}>
             Legal information and lorem ipsum dolor sit amet, consectetur
             adipiscing elit. Maecenas a ipsum at libero sagittis dignissim sed
             ac diam. Praesent ultrices maximus tortor et vulputate. Interdum et
