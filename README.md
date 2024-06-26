@@ -25,12 +25,17 @@ Pet shelter landing page.
 git clone https://github.com/SavitskayaKseniya22/shelter.git
 ```
 
-2. Install dependencies
+2. Change directory
+```bash
+cd shelter
+```
+
+3. Install dependencies
 ``` bash
 npm install
 ```
 
-3. Start the dev server
+4. Start the dev server
 ``` bash
 npm run dev
 ```
