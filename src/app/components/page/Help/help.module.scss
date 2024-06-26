@@ -13,12 +13,12 @@
     gap: 42px;
   }
 
-  h3 {
+  .title {
     text-align: center;
   }
 }
 
-.help-list {
+.help__list {
   display: flex;
   column-gap: 120px;
   row-gap: 55px;
@@ -33,11 +33,11 @@
 
   @media (max-width: 767px) {
     row-gap: 30px;
-    column-gap: 30px;
+    column-gap: 0;
   }
 }
 
-.help-item {
+.help__item {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -54,7 +54,10 @@
     gap: 20px;
   }
 
-  img {
+  .help__image {
+    width: 60px;
+    aspect-ratio: 1/1;
+
     @media (max-width: 767px) {
       width: 40%;
     }

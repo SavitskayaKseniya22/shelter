@@ -1,18 +1,16 @@
-@import '../../../variables.module.scss';
+@import "../../../variables.module.scss";
 
 .popup {
   width: 100%;
-  height: 100vh;
-  z-index: 1.5;
+  height: 100svh;
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: white;
 
   &::before {
-    content: '';
+    content: "";
     width: 100%;
-    height: 100vh;
+    height: 100svh;
     position: fixed;
     background-color: $transparent-back-color;
     top: 0;

@@ -1,4 +1,4 @@
-import { ScreenSize } from './interfaces';
+import { ScreenSize } from "./interfaces";
 
 export function shuffle<T>(array: T[]): T[] {
   const initArray = [...array];
@@ -11,12 +11,16 @@ export function shuffle<T>(array: T[]): T[] {
 }
 
 export function checkRange() {
-  const width = window.innerWidth;
-  if (width > ScreenSize.LAPTOP) {
-    return 0;
+  if (typeof window !== "undefined") {
+    const width = window.innerWidth;
+    if (width > ScreenSize.LAPTOP) {
+      return 0;
+    }
+    if (width > ScreenSize.TABLET) {
+      return 1;
+    }
+    return 2;
   }
-  if (width > ScreenSize.TABLET) {
-    return 1;
-  }
-  return 2;
+
+  return 0;
 }

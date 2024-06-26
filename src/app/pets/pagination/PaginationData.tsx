@@ -1,5 +1,5 @@
-import { AnimalType, RangeType } from '@/app/interfaces';
-import { shuffle } from '@/app/utils';
+import { AnimalType, RangeType } from "@/app/interfaces";
+import { shuffle } from "@/app/utils";
 
 export default class PaginationData {
   elements: AnimalType[] = [];
@@ -48,9 +48,7 @@ export default class PaginationData {
 
   createSortedRow() {
     const getPart = (excArr: AnimalType[], length: number) =>
-      shuffle(
-        this.elements.filter((animal) => !excArr.includes(animal))
-      ).splice(0, length);
+      shuffle(this.elements.filter((animal) => !excArr.includes(animal))).splice(0, length);
 
     const get24items = () => {
       const row = [];
@@ -85,5 +83,9 @@ export default class PaginationData {
 
   public getRangeData(widthRange: RangeType, pageNumber: number) {
     return this.ranges[widthRange][pageNumber - 1];
+  }
+
+  getLength() {
+    return this.elements.length;
   }
 }

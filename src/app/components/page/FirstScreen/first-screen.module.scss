@@ -1,4 +1,4 @@
-@import '../../../variables.module.scss';
+@import "../../../variables.module.scss";
 
 .first-screen {
   display: flex;
@@ -33,7 +33,7 @@
   height: 788px;
   position: relative;
 
-  p {
+  .addition {
     color: $addition-light-color;
   }
 
@@ -50,8 +50,11 @@
   }
 }
 
-.image_dog {
+.image_main {
   z-index: -2;
+  right: 40px !important;
+  width: 698px !important;
+  height: 728px !important;
 
   @media (max-width: 1279px) {
     width: 569px !important;

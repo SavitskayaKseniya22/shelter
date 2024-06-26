@@ -1,17 +1,11 @@
-'use client';
-
-import React from 'react';
-import { useRouter } from 'next/navigation';
-import styles from './friends.module.scss';
-import Button, {
-  ButtonColorType,
-  ButtonContentType,
-} from '../../shared/Button/Button';
-import Carousel from './components/Carousel';
+import React from "react";
+import Link from "next/link";
+import styles from "./friends.module.scss";
+import linkStyles from "../../shared/Button/button.module.scss";
+import Carousel from "./components/Carousel";
+import AnimalsContainer from "../../shared/AnimalsContainer/AnimalsContainer";
 
 function Friends() {
-  const router = useRouter();
-
   return (
     <section className={styles.friends} id="friends">
       <div className={`${styles.container} container`}>
@@ -20,15 +14,13 @@ function Friends() {
           are looking for a house
         </h3>
 
-        <Carousel />
+        <AnimalsContainer>
+          <Carousel />
+        </AnimalsContainer>
 
-        <Button
-          colorType={ButtonColorType.COLORED}
-          contentType={ButtonContentType.STRING}
-          onClick={() => router.push('/pets')}
-        >
+        <Link href="/pets" className={`${linkStyles.button} ${linkStyles.colored} ${linkStyles.string}`}>
           Get to know the rest
-        </Button>
+        </Link>
       </div>
     </section>
   );
