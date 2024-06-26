@@ -1,23 +1,14 @@
-'use client';
-
 import React from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import styles from './footer.module.scss';
 
-const imageBGLoader = () => {
-  if (typeof window !== 'undefined') {
-    const calcSize = window.innerWidth < 768 ? '0' : '768';
-    return `/images/start-screen-gradient-background-${calcSize}.png`;
-  }
-  return `/images/start-screen-gradient-background-768.png`;
-};
 
 function Footer() {
   return (
     <footer className={styles.footer} id="contacts">
       <Image
-        loader={imageBGLoader}
+        
         src="/images/start-screen-gradient-background-768.png"
         fill
         alt="Background"
